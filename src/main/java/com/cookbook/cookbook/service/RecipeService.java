@@ -17,7 +17,7 @@ import java.util.Optional;
 public class RecipeService {
     private final RecipeRepository recipeRepository;
     private final IngredientRepository ingredientRepository;
-    private final String errorMessage = " does not exist";
+    private final static String errorMessage = " does not exist";
 
 
     public RecipeService(RecipeRepository recipeRepository, IngredientRepository ingredientRepository) {
