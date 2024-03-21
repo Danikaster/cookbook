@@ -1,5 +1,7 @@
 package com.cookbook.cookbook.service;
 
+import com.cookbook.cookbook.dto.recipe.RecipeDTO;
+import com.cookbook.cookbook.mapper.recipe.RecipeDTOMapper;
 import com.cookbook.cookbook.model.IngredientModel;
 import com.cookbook.cookbook.model.RecipeModel;
 import com.cookbook.cookbook.repository.IngredientRepository;
@@ -17,16 +19,18 @@ import java.util.Optional;
 public class RecipeService {
     private final RecipeRepository recipeRepository;
     private final IngredientRepository ingredientRepository;
+    private final RecipeDTOMapper recipeMapper;
     private static final String ERROR_MESSAGE = " does not exist";
 
 
-    public RecipeService(RecipeRepository recipeRepository, IngredientRepository ingredientRepository) {
+    public RecipeService(RecipeRepository recipeRepository, IngredientRepository ingredientRepository, RecipeDTOMapper recipeMapper) {
         this.recipeRepository = recipeRepository;
         this.ingredientRepository = ingredientRepository;
+        this.recipeMapper = recipeMapper;
     }
 
-    public List<RecipeModel> getRecipes(){
-        return recipeRepository.findAll();
+    public List<RecipeDTO> getRecipes(){
+        return recipeRepository.findAll().stream().map(recipeMapper).toList();
     }
 
     public void addNewRecipe(RecipeModel recipe) {
@@ -61,10 +65,10 @@ public class RecipeService {
             throw new IllegalStateException("Recipe with name " + name + ERROR_MESSAGE);
     }
 
-    public RecipeModel findByName(String name) {
+    public RecipeDTO findByName(String name) {
         RecipeModel recipe = recipeRepository.findByName(name);
         if (recipe != null) {
-            return recipe;
+            return recipeMapper.apply(recipe);
         }
         else
             throw new IllegalStateException("Recipe with name " + name + ERROR_MESSAGE);

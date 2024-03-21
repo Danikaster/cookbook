@@ -1,5 +1,6 @@
 package com.cookbook.cookbook.controller;
 
+import com.cookbook.cookbook.dto.recipe.RecipeDTO;
 import com.cookbook.cookbook.model.RecipeModel;
 import com.cookbook.cookbook.service.RecipeService;
 import org.springframework.web.bind.annotation.*;
@@ -17,27 +18,27 @@ public class RecipeController {
 
 
     @GetMapping()
-    public List<RecipeModel> findAllRecipes() {
+    public List<RecipeDTO> findAllRecipes() {
         return recipeService.getRecipes();
     }
 
     @GetMapping("/find/{name}")
-    public RecipeModel findByName (@PathVariable String name) {
+    public RecipeDTO findByName(@PathVariable String name) {
         return recipeService.findByName(name);
     }
 
     @PostMapping("/add")
-    public void addRecipe(@RequestBody RecipeModel recipe){
+    public void addRecipe(@RequestBody RecipeModel recipe) {
         recipeService.addNewRecipe(recipe);
     }
 
     @DeleteMapping("/delete/{name}")
-    public void deleteRecipe(@PathVariable String name){
+    public void deleteRecipe(@PathVariable String name) {
         recipeService.deleteRecipe(name);
     }
 
     @PatchMapping("/update")
-    public void updateRecipe(@RequestParam Long id, @RequestParam String name){
+    public void updateRecipe(@RequestParam Long id, @RequestParam String name) {
         recipeService.updateRecipe(id, name);
     }
 }

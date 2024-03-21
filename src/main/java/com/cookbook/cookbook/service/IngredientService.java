@@ -1,6 +1,8 @@
 package com.cookbook.cookbook.service;
 
 
+import com.cookbook.cookbook.dto.ingredient.IngredientDTO;
+import com.cookbook.cookbook.mapper.ingredient.IngredientDTOMapper;
 import com.cookbook.cookbook.model.IngredientModel;
 import com.cookbook.cookbook.repository.IngredientRepository;
 import jakarta.transaction.Transactional;
@@ -14,14 +16,16 @@ import java.util.Optional;
 @Transactional
 public class IngredientService {
     private final IngredientRepository ingredientRepository;
+    private final IngredientDTOMapper ingredientMapper;
     private static final String ERROR_MESSAGE = " does not exist";
 
-    public IngredientService(IngredientRepository ingredientRepository) {
+    public IngredientService(IngredientRepository ingredientRepository, IngredientDTOMapper ingredientMapper) {
         this.ingredientRepository = ingredientRepository;
+        this.ingredientMapper = ingredientMapper;
     }
 
-    public List<IngredientModel> getIngredients(){
-        return ingredientRepository.findAll();
+    public List<IngredientDTO> getIngredients(){
+        return ingredientRepository.findAll().stream().map(ingredientMapper).toList();
     }
 
     public void addNewIngredient(IngredientModel ingredient) {
@@ -43,10 +47,10 @@ public class IngredientService {
             throw new IllegalStateException("Ingredient with name " + name + ERROR_MESSAGE);
     }
 
-    public IngredientModel findByName(String name) {
+    public IngredientDTO findByName(String name) {
         IngredientModel ingredient = ingredientRepository.findByName(name);
         if (ingredient != null) {
-            return ingredient;
+            return ingredientMapper.apply(ingredient);
         }
         else
             throw new IllegalStateException("Ingredient with name " + name + ERROR_MESSAGE);
