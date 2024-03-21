@@ -19,6 +19,26 @@
     
 Отправьте GET-запрос:
 
-    GET http://localhost:8080/api/recipes
+    GET http://localhost:8080/api/ingredients
+Пример ответа
 
+    HTTP/1.1 200 
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Date: Thu, 21 Mar 2024 10:10:52 GMT
+    Keep-Alive: timeout=60
+    Connection: keep-alive
+
+    [
+      {
+        "id": 25,
+        "name": "tomato",
+        "recipes": []
+      },
+      {
+        "id": 26,
+        "name": "potato",
+        "recipes": []
+      }
+    ]
     
