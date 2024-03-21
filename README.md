@@ -8,10 +8,9 @@
 **Пример использования**:
     Откройте браузер или используйте инструмент для тестирования API (например, Postman).
     Отправьте POST-запрос 
-    ```
+    
     POST http://localhost:8080/api/recipes/add
     Content-Type: application/json
-```
     {
       "name": "salad",
       "ingredients": ["tomato"]
