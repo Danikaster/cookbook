@@ -14,7 +14,7 @@ import java.util.Optional;
 @Transactional
 public class IngredientService {
     private final IngredientRepository ingredientRepository;
-    private final static String ERROR_MESSAGE = " does not exist";
+    private static final String ERROR_MESSAGE = " does not exist";
 
     public IngredientService(IngredientRepository ingredientRepository) {
         this.ingredientRepository = ingredientRepository;
