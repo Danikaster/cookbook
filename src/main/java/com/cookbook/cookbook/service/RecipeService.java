@@ -17,6 +17,7 @@ import java.util.Optional;
 public class RecipeService {
     private final RecipeRepository recipeRepository;
     private final IngredientRepository ingredientRepository;
+    private final String error_message = " does not exist";
 
 
     public RecipeService(RecipeRepository recipeRepository, IngredientRepository ingredientRepository) {
@@ -43,7 +44,7 @@ public class RecipeService {
             if(existingIngredient != null)
                 allIngredients.add(existingIngredient);
             else{
-                throw new IllegalStateException("Ingredient with name " + ingredient.getName() + " does not exist");
+                throw new IllegalStateException("Ingredient with name " + ingredient.getName() + error_message);
             }
         }
         recipe.setIngredients(allIngredients);
@@ -57,7 +58,7 @@ public class RecipeService {
             recipeRepository.deleteByName(name);
         }
         else
-            throw new IllegalStateException("Recipe with name " + name + " does not exist");
+            throw new IllegalStateException("Recipe with name " + name + error_message);
     }
 
     public RecipeModel findByName(String name) {
@@ -66,7 +67,7 @@ public class RecipeService {
             return recipe;
         }
         else
-            throw new IllegalStateException("Recipe with name " + name + " does not exist");
+            throw new IllegalStateException("Recipe with name " + name + error_message);
     }
 
     public void updateRecipe(Long id, String name) {
@@ -77,6 +78,6 @@ public class RecipeService {
             recipeRepository.save(newRecipe);
         }
         else
-            throw new IllegalStateException("Recipe with id " + id + " does not exist");
+            throw new IllegalStateException("Recipe with id " + id + error_message);
     }
 }
