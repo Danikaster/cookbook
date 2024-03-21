@@ -14,7 +14,7 @@ import java.util.Optional;
 @Transactional
 public class IngredientService {
     private final IngredientRepository ingredientRepository;
-    private final String error_message = " does not exist";
+    private final String errorMessage = " does not exist";
 
     public IngredientService(IngredientRepository ingredientRepository) {
         this.ingredientRepository = ingredientRepository;
@@ -40,7 +40,7 @@ public class IngredientService {
             ingredientRepository.deleteByName(name);
         }
         else
-            throw new IllegalStateException("Ingredient with name " + name + error_message);
+            throw new IllegalStateException("Ingredient with name " + name + errorMessage);
     }
 
     public IngredientModel findByName(String name) {
@@ -49,7 +49,7 @@ public class IngredientService {
             return ingredient;
         }
         else
-            throw new IllegalStateException("Ingredient with name " + name + error_message);
+            throw new IllegalStateException("Ingredient with name " + name + errorMessage);
     }
 
     public void updateIngredient(Long id, String name) {
@@ -60,6 +60,6 @@ public class IngredientService {
             ingredientRepository.save(newIngredient);
         }
         else
-            throw new IllegalStateException("Ingredient with id " + id + error_message);
+            throw new IllegalStateException("Ingredient with id " + id + errorMessage);
     }
 }
