@@ -11,6 +11,7 @@
     
     POST http://localhost:8080/api/recipes/add
     Content-Type: application/json
+    
     {
       "name": "salad",
       "ingredients": ["tomato"]
