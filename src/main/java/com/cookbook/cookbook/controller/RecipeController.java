@@ -37,7 +37,7 @@ public class RecipeController {
         recipeService.deleteRecipe(name);
     }
 
-    @PatchMapping("/update")
+    @PutMapping("/update")
     public void updateRecipe(@RequestParam Long id, @RequestParam String name) {
         recipeService.updateRecipe(id, name);
     }

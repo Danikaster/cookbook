@@ -37,7 +37,7 @@ public class IngredientController {
         ingredientService.deleteIngredient(name);
     }
 
-    @PatchMapping("/update")
+    @PutMapping ("/update")
     public void updateIngredient(@RequestParam Long id, @RequestParam String name) {
         ingredientService.updateIngredient(id, name);
     }
