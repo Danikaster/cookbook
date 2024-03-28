@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RecipeRepository extends JpaRepository<RecipeModel, Long> {
-   // RecipeModel findByName(String name);
 
     @Query("SELECT r FROM RecipeModel r WHERE r.name = :name")
     RecipeModel findByName(@Param("name") String name);
