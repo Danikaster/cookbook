@@ -1,5 +1,6 @@
 package com.cookbook.cookbook.service;
 
+import com.cookbook.cookbook.cache.EntityCache;
 import com.cookbook.cookbook.dto.recipe.RecipeDTO;
 import com.cookbook.cookbook.mapper.recipe.RecipeDTOMapper;
 import com.cookbook.cookbook.model.IngredientModel;
@@ -21,12 +22,14 @@ public class RecipeService {
     private final IngredientRepository ingredientRepository;
     private final RecipeDTOMapper recipeMapper;
     private static final String ERROR_MESSAGE = " does not exist";
+    private final EntityCache<String, RecipeModel> recipeCache;
 
 
-    public RecipeService(RecipeRepository recipeRepository, IngredientRepository ingredientRepository, RecipeDTOMapper recipeMapper) {
+    public RecipeService(RecipeRepository recipeRepository, IngredientRepository ingredientRepository, RecipeDTOMapper recipeMapper, EntityCache<String, RecipeModel> recipeCache) {
         this.recipeRepository = recipeRepository;
         this.ingredientRepository = ingredientRepository;
         this.recipeMapper = recipeMapper;
+        this.recipeCache = recipeCache;
     }
 
     public List<RecipeDTO> getRecipes(){
@@ -60,14 +63,19 @@ public class RecipeService {
         RecipeModel recipe = recipeRepository.findByName(name);
         if(recipe!=null){
             recipeRepository.deleteByName(name);
+            recipeCache.remove(name);
         }
         else
             throw new IllegalStateException("Recipe with name " + name + ERROR_MESSAGE);
     }
 
     public RecipeDTO findByName(String name) {
-        RecipeModel recipe = recipeRepository.findByName(name);
+        RecipeModel recipe = recipeCache.get(name);
+        if (recipe == null) {
+            recipe = recipeRepository.findByName(name);
+        }
         if (recipe != null) {
+            recipeCache.put(name, recipe);
             return recipeMapper.apply(recipe);
         }
         else
@@ -78,8 +86,10 @@ public class RecipeService {
         Optional<RecipeModel> oldRecipe = recipeRepository.findById(id);
         if (oldRecipe.isPresent()) {
             RecipeModel newRecipe = oldRecipe.get();
+            recipeCache.remove(newRecipe.getName());
             newRecipe.setName(name);
             recipeRepository.save(newRecipe);
+            recipeCache.put(name, newRecipe);
         }
         else
             throw new IllegalStateException("Recipe with id " + id + ERROR_MESSAGE);
