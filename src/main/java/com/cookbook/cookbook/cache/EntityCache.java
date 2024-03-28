@@ -6,26 +6,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component
-public class EntityCache<Key, Value> {
-    private final Map<Key, Value> cache;
+public class EntityCache<KEY, VALUE> {
+    private final Map<KEY, VALUE> cache;
     private static final int MAX_SIZE = 100;
 
     public EntityCache() {
         this.cache = new HashMap<>();
     }
 
-    public void put(Key key, Value value) {
+    public void put(KEY key, VALUE value) {
         if (cache.size() >= MAX_SIZE) {
             cache.clear();
         }
         cache.put(key, value);
     }
 
-    public Value get(Key key) {
+    public VALUE get(KEY key) {
         return cache.get(key);
     }
 
-    public void remove(Key key) {
+    public void remove(KEY key) {
         cache.remove(key);
     }
 
