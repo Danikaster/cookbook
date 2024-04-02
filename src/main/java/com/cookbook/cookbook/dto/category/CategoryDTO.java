@@ -15,6 +15,15 @@ public class CategoryDTO {
         this.recipes = recipes;
     }
 
+    @Override
+    public String toString() {
+        return "CategoryDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", recipes=" + recipes +
+                '}';
+    }
+
     public CategoryDTO(String name) {
         this.name = name;
     }
@@ -43,12 +52,5 @@ public class CategoryDTO {
         this.recipes = recipes;
     }
 
-    @Override
-    public String toString() {
-        return "CategoryDTO{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", recipes=" + recipes +
-                '}';
-    }
+
 }
