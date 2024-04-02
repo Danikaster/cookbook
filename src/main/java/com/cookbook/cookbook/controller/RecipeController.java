@@ -1,7 +1,7 @@
 package com.cookbook.cookbook.controller;
 
 import com.cookbook.cookbook.dto.recipe.RecipeDTO;
-import com.cookbook.cookbook.model.RecipeModel;
+import com.cookbook.cookbook.model.Recipe;
 import com.cookbook.cookbook.service.RecipeService;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +28,7 @@ public class RecipeController {
     }
 
     @PostMapping("/add")
-    public void addRecipe(@RequestBody RecipeModel recipe) {
+    public void addRecipe(@RequestBody Recipe recipe) {
         recipeService.addNewRecipe(recipe);
     }
 

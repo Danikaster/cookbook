@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "ingredients")
-public class IngredientModel {
+public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -16,7 +16,7 @@ public class IngredientModel {
     @Column(name = "name", unique = true)
     private String name;
 
-    public IngredientModel(String name) {
+    public Ingredient(String name) {
         this.name = name;
     }
 
@@ -28,7 +28,7 @@ public class IngredientModel {
                 '}';
     }
 
-    public IngredientModel() {
+    public Ingredient() {
 
     }
 
@@ -48,14 +48,14 @@ public class IngredientModel {
         this.name = name;
     }
 
-    public List<RecipeModel> getRecipes() {
+    public List<Recipe> getRecipes() {
         return recipes;
     }
 
-    public void setRecipes(List<RecipeModel> recipes) {
+    public void setRecipes(List<Recipe> recipes) {
         this.recipes = recipes;
     }
 
     @ManyToMany(mappedBy = "ingredients", cascade = CascadeType.ALL)
-    private List<RecipeModel> recipes = new ArrayList<>();
+    private List<Recipe> recipes = new ArrayList<>();
 }

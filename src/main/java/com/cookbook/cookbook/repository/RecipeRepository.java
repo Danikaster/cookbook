@@ -1,16 +1,16 @@
 package com.cookbook.cookbook.repository;
 
-import com.cookbook.cookbook.model.RecipeModel;
+import com.cookbook.cookbook.model.Recipe;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RecipeRepository extends JpaRepository<RecipeModel, Long> {
+public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
-    @Query("SELECT r FROM RecipeModel r WHERE r.name = :name")
-    RecipeModel findByName(@Param("name") String name);
+    @Query("SELECT r FROM Recipe r WHERE r.name = :name")
+    Recipe findByName(@Param("name") String name);
 
     void deleteByName(String name);
 }

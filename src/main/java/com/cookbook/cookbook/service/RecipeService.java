@@ -3,8 +3,9 @@ package com.cookbook.cookbook.service;
 import com.cookbook.cookbook.cache.EntityCache;
 import com.cookbook.cookbook.dto.recipe.RecipeDTO;
 import com.cookbook.cookbook.mapper.recipe.RecipeDTOMapper;
-import com.cookbook.cookbook.model.IngredientModel;
-import com.cookbook.cookbook.model.RecipeModel;
+import com.cookbook.cookbook.model.Ingredient;
+import com.cookbook.cookbook.model.Recipe;
+import com.cookbook.cookbook.repository.CategoryRepository;
 import com.cookbook.cookbook.repository.IngredientRepository;
 import com.cookbook.cookbook.repository.RecipeRepository;
 import jakarta.transaction.Transactional;
@@ -20,78 +21,81 @@ import java.util.Optional;
 public class RecipeService {
     private final RecipeRepository recipeRepository;
     private final IngredientRepository ingredientRepository;
+    private final CategoryRepository categoryRepository;
     private final RecipeDTOMapper recipeMapper;
     private static final String ERROR_MESSAGE = " does not exist";
-    private final EntityCache<String, RecipeModel> recipeCache;
+    private final EntityCache<String, Recipe> recipeCache;
 
 
-    public RecipeService(RecipeRepository recipeRepository, IngredientRepository ingredientRepository, RecipeDTOMapper recipeMapper, EntityCache<String, RecipeModel> recipeCache) {
+    public RecipeService(RecipeRepository recipeRepository, IngredientRepository ingredientRepository, CategoryRepository categoryRepository, RecipeDTOMapper recipeMapper, EntityCache<String, Recipe> recipeCache) {
         this.recipeRepository = recipeRepository;
         this.ingredientRepository = ingredientRepository;
+        this.categoryRepository = categoryRepository;
         this.recipeMapper = recipeMapper;
         this.recipeCache = recipeCache;
     }
 
-    public List<RecipeDTO> getRecipes(){
+    public List<RecipeDTO> getRecipes() {
         return recipeRepository.findAll().stream().map(recipeMapper).toList();
     }
 
-    public void addNewRecipe(RecipeModel recipe) {
+    public void addNewRecipe(Recipe recipe) {
 
-        if(Objects.equals(recipe.getName(), ""))
+        if (Objects.equals(recipe.getName(), ""))
             throw new IllegalStateException("Name of recipe is empty");
-        if(recipeRepository.findByName(recipe.getName())!=null)
+        if (recipeRepository.findByName(recipe.getName()) != null)
             throw new IllegalStateException("Recipe already exist");
+        if (categoryRepository.findByName(recipe.getCategory().getName()) == null && recipe.getCategory().getName() != null)
+            throw new IllegalStateException("There is no such category");
+        recipe.setCategory(categoryRepository.findByName(recipe.getCategory().getName()));
 
-        List<IngredientModel> ingredients = recipe.getIngredients();
-        List<IngredientModel> allIngredients = new ArrayList<>();
+        List<Ingredient> ingredients = recipe.getIngredients();
+        List<Ingredient> allIngredients = new ArrayList<>();
 
-        for(IngredientModel ingredient : ingredients){
-            IngredientModel existingIngredient = ingredientRepository.findByName(ingredient.getName());
-            if(existingIngredient != null)
+        for (Ingredient ingredient : ingredients) {
+            Ingredient existingIngredient = ingredientRepository.findByName(ingredient.getName());
+            if (existingIngredient != null)
                 allIngredients.add(existingIngredient);
-            else{
+            else {
                 throw new IllegalStateException("Ingredient with name " + ingredient.getName() + ERROR_MESSAGE);
             }
         }
         recipe.setIngredients(allIngredients);
+
         recipeRepository.save(recipe);
 
     }
 
     public void deleteRecipe(String name) {
-        RecipeModel recipe = recipeRepository.findByName(name);
-        if(recipe!=null){
+        Recipe recipe = recipeRepository.findByName(name);
+        if (recipe != null) {
             recipeRepository.deleteByName(name);
             recipeCache.remove(name);
-        }
-        else
+        } else
             throw new IllegalStateException("Recipe with name " + name + ERROR_MESSAGE);
     }
 
     public RecipeDTO findByName(String name) {
-        RecipeModel recipe = recipeCache.get(name);
+        Recipe recipe = recipeCache.get(name);
         if (recipe == null) {
             recipe = recipeRepository.findByName(name);
         }
         if (recipe != null) {
             recipeCache.put(name, recipe);
             return recipeMapper.apply(recipe);
-        }
-        else
+        } else
             throw new IllegalStateException("Recipe with name " + name + ERROR_MESSAGE);
     }
 
     public void updateRecipe(Long id, String name) {
-        Optional<RecipeModel> oldRecipe = recipeRepository.findById(id);
+        Optional<Recipe> oldRecipe = recipeRepository.findById(id);
         if (oldRecipe.isPresent()) {
-            RecipeModel newRecipe = oldRecipe.get();
+            Recipe newRecipe = oldRecipe.get();
             recipeCache.remove(newRecipe.getName());
             newRecipe.setName(name);
             recipeRepository.save(newRecipe);
             recipeCache.put(name, newRecipe);
-        }
-        else
+        } else
             throw new IllegalStateException("Recipe with id " + id + ERROR_MESSAGE);
     }
 }

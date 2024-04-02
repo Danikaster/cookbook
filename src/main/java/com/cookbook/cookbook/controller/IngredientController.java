@@ -1,7 +1,7 @@
 package com.cookbook.cookbook.controller;
 
 import com.cookbook.cookbook.dto.ingredient.IngredientDTO;
-import com.cookbook.cookbook.model.IngredientModel;
+import com.cookbook.cookbook.model.Ingredient;
 import com.cookbook.cookbook.service.IngredientService;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +16,6 @@ public class IngredientController {
         this.ingredientService = ingredientService;
     }
 
-
     @GetMapping()
     public List<IngredientDTO> findAllIngredients() {
         return ingredientService.getIngredients();
@@ -28,7 +27,7 @@ public class IngredientController {
     }
 
     @PostMapping("/add")
-    public void addIngredient(@RequestBody IngredientModel ingredient) {
+    public void addIngredient(@RequestBody Ingredient ingredient) {
         ingredientService.addNewIngredient(ingredient);
     }
 
@@ -37,7 +36,7 @@ public class IngredientController {
         ingredientService.deleteIngredient(name);
     }
 
-    @PutMapping ("/update")
+    @PutMapping("/update")
     public void updateIngredient(@RequestParam Long id, @RequestParam String name) {
         ingredientService.updateIngredient(id, name);
     }

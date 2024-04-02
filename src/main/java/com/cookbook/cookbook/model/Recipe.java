@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "recipes")
-public class RecipeModel {
+public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,11 +15,17 @@ public class RecipeModel {
     @Column(name = "name", unique = true)
     private String name;
 
-    public RecipeModel() {
+    public Recipe(Category category) {
+        this.category = category;
     }
 
-    public RecipeModel(String name) {
+    public Recipe(String name, Category category) {
         this.name = name;
+        this.category = category;
+    }
+
+    public Recipe() {
+
     }
 
     @Override
@@ -28,6 +34,14 @@ public class RecipeModel {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public Long getId() {
@@ -46,13 +60,17 @@ public class RecipeModel {
         this.name = name;
     }
 
-    public List<IngredientModel> getIngredients() {
+    public List<Ingredient> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List<IngredientModel> ingredients) {
+    public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "category")
+    private Category category;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
@@ -60,5 +78,7 @@ public class RecipeModel {
             joinColumns = @JoinColumn(name = "recipe_id"),
             inverseJoinColumns = @JoinColumn(name = "ingredient_id")
     )
-    private List<IngredientModel> ingredients = new ArrayList<>();
+    private List<Ingredient> ingredients = new ArrayList<>();
+
+
 }

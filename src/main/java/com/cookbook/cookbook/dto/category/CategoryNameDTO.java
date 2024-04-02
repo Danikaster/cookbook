@@ -1,14 +1,10 @@
-package com.cookbook.cookbook.dto.ingredient;
+package com.cookbook.cookbook.dto.category;
 
-public class IngredientNameDTO {
+public class CategoryNameDTO {
     private long id;
     private String name;
 
-    public IngredientNameDTO() {
-    }
-
-    public IngredientNameDTO(String name) {
-        this.name = name;
+    public CategoryNameDTO() {
     }
 
     public long getId() {
@@ -19,26 +15,28 @@ public class IngredientNameDTO {
         this.id = id;
     }
 
-    public IngredientNameDTO(long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
     public String getName() {
         return name;
     }
 
+    public CategoryNameDTO(long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public void setName(String name) {
         this.name = name;
     }
 
+    public CategoryNameDTO(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
-        return "IngredientNameDTO{" +
+        return "CategoryNameDTO{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
     }
-
 }
