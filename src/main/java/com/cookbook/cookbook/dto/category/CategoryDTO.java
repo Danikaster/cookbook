@@ -9,12 +9,6 @@ public class CategoryDTO {
     private String name;
     private List<RecipeNameDTO> recipes;
 
-    public CategoryDTO(long id, String name, List<RecipeNameDTO> recipes) {
-        this.id = id;
-        this.name = name;
-        this.recipes = recipes;
-    }
-
     @Override
     public String toString() {
         return "CategoryDTO{" +
@@ -24,23 +18,13 @@ public class CategoryDTO {
                 '}';
     }
 
-    public CategoryDTO(String name) {
-        this.name = name;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
+    public CategoryDTO(long id, String name, List<RecipeNameDTO> recipes) {
         this.id = id;
+        this.name = name;
+        this.recipes = recipes;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public CategoryDTO(String name) {
         this.name = name;
     }
 
@@ -52,5 +36,19 @@ public class CategoryDTO {
         this.recipes = recipes;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }
