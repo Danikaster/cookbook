@@ -40,14 +40,6 @@ public class CategoryService {
             throw new IllegalStateException("Name of category is empty");
         if (categoryRepository.findByName(category.getName()) != null)
             throw new IllegalStateException("Category already exist");
-        List<Recipe> recipes = category.getRecipes();
-        for (Recipe recipe : recipes) {
-            Recipe existingRecipe = recipeRepository.findByName(recipe.getName());
-            if (existingRecipe != null) {
-                existingRecipe.setCategory(category);
-                recipeRepository.save(existingRecipe);
-            }
-        }
 
         categoryRepository.save(category);
     }
