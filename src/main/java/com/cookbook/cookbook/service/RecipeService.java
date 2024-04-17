@@ -29,7 +29,6 @@ public class RecipeService {
     private static final String ERROR_MESSAGE = " does not exist";
     private final EntityCache<String, Recipe> recipeCache;
 
-
     public RecipeService(RecipeRepository recipeRepository, IngredientRepository ingredientRepository, CategoryRepository categoryRepository, RecipeDTOMapper recipeMapper, EntityCache<String, Recipe> recipeCache) {
         this.recipeRepository = recipeRepository;
         this.ingredientRepository = ingredientRepository;
@@ -44,12 +43,15 @@ public class RecipeService {
 
     public void addNewRecipe(Recipe recipe) {
 
-        if (Objects.equals(recipe.getName(), ""))
+        if (Objects.equals(recipe.getName(), "")) {
             throw new BadRequestException("Name of recipe is empty");
-        if (recipeRepository.findByName(recipe.getName()) != null)
+        }
+        if (recipeRepository.findByName(recipe.getName()) != null) {
             throw new ServerException("Recipe already exist");
-        if (categoryRepository.findByName(recipe.getCategory().getName()) == null && recipe.getCategory().getName() != null)
+        }
+        if (categoryRepository.findByName(recipe.getCategory().getName()) == null && recipe.getCategory().getName() != null) {
             throw new ServerException("There is no such category");
+        }
         recipe.setCategory(categoryRepository.findByName(recipe.getCategory().getName()));
 
         List<Ingredient> ingredients = recipe.getIngredients();
@@ -57,9 +59,9 @@ public class RecipeService {
 
         for (Ingredient ingredient : ingredients) {
             Ingredient existingIngredient = ingredientRepository.findByName(ingredient.getName());
-            if (existingIngredient != null)
+            if (existingIngredient != null) {
                 allIngredients.add(existingIngredient);
-            else {
+            } else {
                 throw new ResourceNotFoundException("Ingredient with name " + ingredient.getName() + ERROR_MESSAGE);
             }
         }
@@ -74,8 +76,9 @@ public class RecipeService {
         if (recipe != null) {
             recipeRepository.deleteByName(name);
             recipeCache.remove(name);
-        } else
+        } else {
             throw new ResourceNotFoundException("Recipe with name " + name + ERROR_MESSAGE);
+        }
     }
 
     public RecipeDTO findByName(String name) {
@@ -86,8 +89,9 @@ public class RecipeService {
         if (recipe != null) {
             recipeCache.put(name, recipe);
             return recipeMapper.apply(recipe);
-        } else
+        } else {
             throw new ResourceNotFoundException("Recipe with name " + name + ERROR_MESSAGE);
+        }
     }
 
     public void updateRecipe(Long id, String name) {
@@ -98,7 +102,8 @@ public class RecipeService {
             newRecipe.setName(name);
             recipeRepository.save(newRecipe);
             recipeCache.put(name, newRecipe);
-        } else
+        } else {
             throw new ResourceNotFoundException("Recipe with id " + id + ERROR_MESSAGE);
+        }
     }
 }

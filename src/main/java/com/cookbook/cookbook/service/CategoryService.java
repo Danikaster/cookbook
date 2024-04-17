@@ -34,20 +34,21 @@ public class CategoryService {
     }
 
     public List<CategoryDTO> getCategories() {
-        try{
+        try {
             return categoryRepository.findAll().stream().map(categoryMapper).toList();
-        }
-        catch(ServerException e){
+        } catch (ServerException e) {
             throw new ServerException("Unable to connect to the database");
         }
     }
 
     public void addNewCategory(Category category) {
 
-        if (Objects.equals(category.getName(), ""))
+        if (Objects.equals(category.getName(), "")) {
             throw new BadRequestException("Name of category is empty");
-        if (categoryRepository.findByName(category.getName()) != null)
+        }
+        if (categoryRepository.findByName(category.getName()) != null) {
             throw new ServerException("Category already exist");
+        }
 
         categoryRepository.save(category);
     }
@@ -63,8 +64,9 @@ public class CategoryService {
 
             categoryRepository.deleteByName(name);
             categoryCache.remove(name);
-        } else
+        } else {
             throw new ResourceNotFoundException("Category with name " + name + ERROR_MESSAGE);
+        }
     }
 
     public CategoryDTO findByName(String name) {
@@ -88,7 +90,8 @@ public class CategoryService {
             newCategory.setName(name);
             categoryRepository.save(newCategory);
             categoryCache.put(name, newCategory);
-        } else
+        } else {
             throw new ResourceNotFoundException("Category with id " + id + ERROR_MESSAGE);
+        }
     }
 }

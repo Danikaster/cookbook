@@ -8,10 +8,10 @@
 		<version>3.2.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ip_position</groupId>
-	<artifactId>ipPosition</artifactId>
+	<groupId>com.cookbook</groupId>
+	<artifactId>cookbook</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ipPosition</name>
+	<name>cookbook</name>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
@@ -84,7 +84,24 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>3.1.1</version>
+				<executions>
+					<execution>
+						<id>checkstyle</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<configLocation>checkstyle.xml</configLocation>
+					<!-- Дополнительные настройки -->
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 

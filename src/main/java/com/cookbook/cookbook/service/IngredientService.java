@@ -36,10 +36,12 @@ public class IngredientService {
 
     public void addNewIngredient(Ingredient ingredient) {
 
-        if (Objects.equals(ingredient.getName(), ""))
+        if (Objects.equals(ingredient.getName(), "")) {
             throw new BadRequestException("Name of ingredient is empty");
-        if (ingredientRepository.findByName(ingredient.getName()) != null)
+        }
+        if (ingredientRepository.findByName(ingredient.getName()) != null) {
             throw new ServerException("Ingredient already exist");
+        }
 
         ingredientRepository.save(ingredient);
     }
@@ -49,8 +51,9 @@ public class IngredientService {
         if (ingredient != null) {
             ingredientRepository.deleteByName(name);
             ingredientCache.remove(name);
-        } else
+        } else {
             throw new ResourceNotFoundException("Ingredient with name " + name + ERROR_MESSAGE);
+        }
     }
 
     public IngredientDTO findByName(String name) {
@@ -74,7 +77,8 @@ public class IngredientService {
             newIngredient.setName(name);
             ingredientRepository.save(newIngredient);
             ingredientCache.put(name, newIngredient);
-        } else
+        } else {
             throw new ResourceNotFoundException("Ingredient with id " + id + ERROR_MESSAGE);
+        }
     }
 }

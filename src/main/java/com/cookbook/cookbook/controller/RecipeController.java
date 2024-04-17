@@ -16,7 +16,6 @@ public class RecipeController {
         this.recipeService = recipeService;
     }
 
-
     @GetMapping()
     public List<RecipeDTO> findAllRecipes() {
         return recipeService.getRecipes();

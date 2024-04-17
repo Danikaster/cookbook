@@ -1,6 +1,6 @@
 package com.cookbook.cookbook.exception;
 
-public class BadRequestException extends RuntimeException{
+public class BadRequestException extends RuntimeException {
     public BadRequestException(final String message) {
         super(message);
     }
