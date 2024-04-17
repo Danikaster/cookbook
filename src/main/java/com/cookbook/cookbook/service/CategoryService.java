@@ -2,6 +2,8 @@ package com.cookbook.cookbook.service;
 
 import com.cookbook.cookbook.cache.EntityCache;
 import com.cookbook.cookbook.dto.category.CategoryDTO;
+import com.cookbook.cookbook.exception.BadRequestException;
+import com.cookbook.cookbook.exception.ResourceNotFoundException;
 import com.cookbook.cookbook.mapper.category.CategoryDTOMapper;
 import com.cookbook.cookbook.model.Category;
 import com.cookbook.cookbook.model.Recipe;
@@ -37,9 +39,9 @@ public class CategoryService {
     public void addNewCategory(Category category) {
 
         if (Objects.equals(category.getName(), ""))
-            throw new IllegalStateException("Name of category is empty");
+            throw new BadRequestException("Name of category is empty");
         if (categoryRepository.findByName(category.getName()) != null)
-            throw new IllegalStateException("Category already exist");
+            throw new BadRequestException("Category already exist");
 
         categoryRepository.save(category);
     }
@@ -56,7 +58,7 @@ public class CategoryService {
             categoryRepository.deleteByName(name);
             categoryCache.remove(name);
         } else
-            throw new IllegalStateException("Category with name " + name + ERROR_MESSAGE);
+            throw new ResourceNotFoundException("Category with name " + name + ERROR_MESSAGE);
     }
 
     public CategoryDTO findByName(String name) {
@@ -68,7 +70,7 @@ public class CategoryService {
             categoryCache.put(name, category);
             return categoryMapper.apply(category);
         } else {
-            throw new IllegalStateException("Category with name " + name + ERROR_MESSAGE);
+            throw new ResourceNotFoundException("Category with name " + name + ERROR_MESSAGE);
         }
     }
 
@@ -81,6 +83,6 @@ public class CategoryService {
             categoryRepository.save(newCategory);
             categoryCache.put(name, newCategory);
         } else
-            throw new IllegalStateException("Category with id " + id + ERROR_MESSAGE);
+            throw new ResourceNotFoundException("Category with id " + id + ERROR_MESSAGE);
     }
 }

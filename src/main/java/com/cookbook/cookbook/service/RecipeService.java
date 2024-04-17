@@ -2,6 +2,8 @@ package com.cookbook.cookbook.service;
 
 import com.cookbook.cookbook.cache.EntityCache;
 import com.cookbook.cookbook.dto.recipe.RecipeDTO;
+import com.cookbook.cookbook.exception.BadRequestException;
+import com.cookbook.cookbook.exception.ResourceNotFoundException;
 import com.cookbook.cookbook.mapper.recipe.RecipeDTOMapper;
 import com.cookbook.cookbook.model.Ingredient;
 import com.cookbook.cookbook.model.Recipe;
@@ -42,11 +44,11 @@ public class RecipeService {
     public void addNewRecipe(Recipe recipe) {
 
         if (Objects.equals(recipe.getName(), ""))
-            throw new IllegalStateException("Name of recipe is empty");
+            throw new BadRequestException("Name of recipe is empty");
         if (recipeRepository.findByName(recipe.getName()) != null)
-            throw new IllegalStateException("Recipe already exist");
+            throw new BadRequestException("Recipe already exist");
         if (categoryRepository.findByName(recipe.getCategory().getName()) == null && recipe.getCategory().getName() != null)
-            throw new IllegalStateException("There is no such category");
+            throw new ResourceNotFoundException("There is no such category");
         recipe.setCategory(categoryRepository.findByName(recipe.getCategory().getName()));
 
         List<Ingredient> ingredients = recipe.getIngredients();
@@ -57,7 +59,7 @@ public class RecipeService {
             if (existingIngredient != null)
                 allIngredients.add(existingIngredient);
             else {
-                throw new IllegalStateException("Ingredient with name " + ingredient.getName() + ERROR_MESSAGE);
+                throw new ResourceNotFoundException("Ingredient with name " + ingredient.getName() + ERROR_MESSAGE);
             }
         }
         recipe.setIngredients(allIngredients);
@@ -72,7 +74,7 @@ public class RecipeService {
             recipeRepository.deleteByName(name);
             recipeCache.remove(name);
         } else
-            throw new IllegalStateException("Recipe with name " + name + ERROR_MESSAGE);
+            throw new ResourceNotFoundException("Recipe with name " + name + ERROR_MESSAGE);
     }
 
     public RecipeDTO findByName(String name) {
@@ -84,7 +86,7 @@ public class RecipeService {
             recipeCache.put(name, recipe);
             return recipeMapper.apply(recipe);
         } else
-            throw new IllegalStateException("Recipe with name " + name + ERROR_MESSAGE);
+            throw new ResourceNotFoundException("Recipe with name " + name + ERROR_MESSAGE);
     }
 
     public void updateRecipe(Long id, String name) {
@@ -96,6 +98,6 @@ public class RecipeService {
             recipeRepository.save(newRecipe);
             recipeCache.put(name, newRecipe);
         } else
-            throw new IllegalStateException("Recipe with id " + id + ERROR_MESSAGE);
+            throw new ResourceNotFoundException("Recipe with id " + id + ERROR_MESSAGE);
     }
 }
