@@ -4,6 +4,7 @@ import com.cookbook.cookbook.cache.EntityCache;
 import com.cookbook.cookbook.dto.recipe.RecipeDTO;
 import com.cookbook.cookbook.exception.BadRequestException;
 import com.cookbook.cookbook.exception.ResourceNotFoundException;
+import com.cookbook.cookbook.exception.ServerException;
 import com.cookbook.cookbook.mapper.recipe.RecipeDTOMapper;
 import com.cookbook.cookbook.model.Ingredient;
 import com.cookbook.cookbook.model.Recipe;
@@ -46,9 +47,9 @@ public class RecipeService {
         if (Objects.equals(recipe.getName(), ""))
             throw new BadRequestException("Name of recipe is empty");
         if (recipeRepository.findByName(recipe.getName()) != null)
-            throw new BadRequestException("Recipe already exist");
+            throw new ServerException("Recipe already exist");
         if (categoryRepository.findByName(recipe.getCategory().getName()) == null && recipe.getCategory().getName() != null)
-            throw new ResourceNotFoundException("There is no such category");
+            throw new ServerException("There is no such category");
         recipe.setCategory(categoryRepository.findByName(recipe.getCategory().getName()));
 
         List<Ingredient> ingredients = recipe.getIngredients();

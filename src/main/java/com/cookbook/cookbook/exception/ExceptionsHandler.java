@@ -1,14 +1,23 @@
 package com.cookbook.cookbook.exception;
 
+import java.time.format.DateTimeParseException;
 import java.util.Date;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.client.HttpClientErrorException;
 
-@RestControllerAdvice
+@ControllerAdvice
 public class ExceptionsHandler {
-    @ExceptionHandler(ServerException.class)
+    @ExceptionHandler({ServerException.class, RuntimeException.class})
     public ResponseEntity<ExceptionDetails> serverException(
             final ServerException exception) {
         ExceptionDetails exceptionDetails = new ExceptionDetails(
@@ -29,7 +38,16 @@ public class ExceptionsHandler {
                 HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(BadRequestException.class)
+    @ExceptionHandler({HttpClientErrorException.class,
+            HttpMessageNotReadableException.class,
+            MethodArgumentNotValidException.class,
+            MissingServletRequestParameterException.class,
+            EntityNotFoundException.class,
+            ConstraintViolationException.class,
+            JsonProcessingException.class,
+            DateTimeParseException.class,
+            IllegalArgumentException.class,
+            BadRequestException.class})
     public ResponseEntity<ExceptionDetails> badRequestException(
             final BadRequestException exception) {
         ExceptionDetails exceptionDetails = new ExceptionDetails(

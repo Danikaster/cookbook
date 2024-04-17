@@ -4,6 +4,7 @@ import com.cookbook.cookbook.cache.EntityCache;
 import com.cookbook.cookbook.dto.category.CategoryDTO;
 import com.cookbook.cookbook.exception.BadRequestException;
 import com.cookbook.cookbook.exception.ResourceNotFoundException;
+import com.cookbook.cookbook.exception.ServerException;
 import com.cookbook.cookbook.mapper.category.CategoryDTOMapper;
 import com.cookbook.cookbook.model.Category;
 import com.cookbook.cookbook.model.Recipe;
@@ -33,7 +34,12 @@ public class CategoryService {
     }
 
     public List<CategoryDTO> getCategories() {
-        return categoryRepository.findAll().stream().map(categoryMapper).toList();
+        try{
+            return categoryRepository.findAll().stream().map(categoryMapper).toList();
+        }
+        catch(ServerException e){
+            throw new ServerException("Unable to connect to the database");
+        }
     }
 
     public void addNewCategory(Category category) {
@@ -41,7 +47,7 @@ public class CategoryService {
         if (Objects.equals(category.getName(), ""))
             throw new BadRequestException("Name of category is empty");
         if (categoryRepository.findByName(category.getName()) != null)
-            throw new BadRequestException("Category already exist");
+            throw new ServerException("Category already exist");
 
         categoryRepository.save(category);
     }

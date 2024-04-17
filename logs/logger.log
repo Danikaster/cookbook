@@ -1,261 +1,207 @@
-[2024-04-17 21:21:40] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 12756 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
-[2024-04-17 21:21:40] INFO  - No active profile set, falling back to 1 default profile: "default"
-[2024-04-17 21:21:41] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2024-04-17 21:21:41] INFO  - Finished Spring Data repository scanning in 50 ms. Found 3 JPA repository interfaces.
-[2024-04-17 21:21:42] INFO  - Tomcat initialized with port 8080 (http)
-[2024-04-17 21:21:42] INFO  - Starting service [Tomcat]
-[2024-04-17 21:21:42] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
-[2024-04-17 21:21:42] INFO  - Initializing Spring embedded WebApplicationContext
-[2024-04-17 21:21:42] INFO  - Root WebApplicationContext: initialization completed in 1720 ms
-[2024-04-17 21:21:42] INFO  - HikariPool-1 - Starting...
-[2024-04-17 21:21:42] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2b43f314
-[2024-04-17 21:21:42] INFO  - HikariPool-1 - Start completed.
-[2024-04-17 21:21:42] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
-[2024-04-17 21:21:43] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
-[2024-04-17 21:21:43] INFO  - HHH000026: Second-level cache disabled
-[2024-04-17 21:21:43] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
-[2024-04-17 21:21:43] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[2024-04-17 21:21:44] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2024-04-17 21:21:44] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:21:45] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
-[2024-04-17 21:21:45] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2024-04-17 21:21:46] INFO  - Tomcat started on port 8080 (http) with context path ''
-[2024-04-17 21:21:46] INFO  - Started CookbookApplication in 6.438 seconds (process running for 11.234)
-[2024-04-17 21:22:01] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2024-04-17 21:22:01] INFO  - Initializing Servlet 'dispatcherServlet'
-[2024-04-17 21:22:01] INFO  - Completed initialization in 6 ms
-[2024-04-17 21:22:01] INFO  - Running method addNewIngredient with args [IngredientModel{id=0, name='carrot'}]
-[2024-04-17 21:22:01] ERROR - Error while running addNewIngredient with args [IngredientModel{id=0, name='carrot'}]: Ingredient already exist
-[2024-04-17 21:22:01] ERROR - Error while running addIngredient with args [IngredientModel{id=0, name='carrot'}]: Ingredient already exist
-[2024-04-17 21:22:27] INFO  - Running method addNewIngredient with args [IngredientModel{id=0, name='carrotl'}]
-[2024-04-17 21:22:27] INFO  - Result of addNewIngredient: success 
-[2024-04-17 21:22:30] INFO  - Running method findByName with args [carrotl]
-[2024-04-17 21:22:30] INFO  - Result of findByName: success 
-[2024-04-17 21:22:33] INFO  - Running method updateIngredient with args [32, "carrot666"]
-[2024-04-17 21:22:33] ERROR - Error while running updateIngredient with args [32, "carrot666"]: Ingredient with id 32 does not exist
-[2024-04-17 21:22:33] ERROR - Error while running updateIngredient with args [32, "carrot666"]: Ingredient with id 32 does not exist
-[2024-04-17 21:22:36] INFO  - Running method getIngredients with args []
-[2024-04-17 21:22:36] INFO  - Result of getIngredients: success 
-[2024-04-17 21:22:40] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:22:40] INFO  - HikariPool-1 - Shutdown initiated...
-[2024-04-17 21:22:40] INFO  - HikariPool-1 - Shutdown completed.
-[2024-04-17 21:22:58] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 680 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
-[2024-04-17 21:22:58] INFO  - No active profile set, falling back to 1 default profile: "default"
-[2024-04-17 21:22:59] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2024-04-17 21:22:59] INFO  - Finished Spring Data repository scanning in 45 ms. Found 3 JPA repository interfaces.
-[2024-04-17 21:23:00] INFO  - Tomcat initialized with port 8080 (http)
-[2024-04-17 21:23:00] INFO  - Starting service [Tomcat]
-[2024-04-17 21:23:00] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
-[2024-04-17 21:23:00] INFO  - Initializing Spring embedded WebApplicationContext
-[2024-04-17 21:23:00] INFO  - Root WebApplicationContext: initialization completed in 1390 ms
-[2024-04-17 21:23:00] INFO  - HikariPool-1 - Starting...
-[2024-04-17 21:23:00] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2506b881
-[2024-04-17 21:23:00] INFO  - HikariPool-1 - Start completed.
-[2024-04-17 21:23:00] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
-[2024-04-17 21:23:00] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
-[2024-04-17 21:23:00] INFO  - HHH000026: Second-level cache disabled
-[2024-04-17 21:23:00] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
-[2024-04-17 21:23:01] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[2024-04-17 21:23:01] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2024-04-17 21:23:01] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:23:02] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
-[2024-04-17 21:23:03] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2024-04-17 21:23:04] INFO  - Tomcat started on port 8080 (http) with context path ''
-[2024-04-17 21:23:04] INFO  - Started CookbookApplication in 5.794 seconds (process running for 6.571)
-[2024-04-17 21:23:30] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2024-04-17 21:23:30] INFO  - Initializing Servlet 'dispatcherServlet'
-[2024-04-17 21:23:30] INFO  - Completed initialization in 2 ms
-[2024-04-17 21:23:30] INFO  - Running method updateIngredient with args [32, "carrot666"]
-[2024-04-17 21:23:31] ERROR - Error while running updateIngredient with args [32, "carrot666"]: Ingredient with id 32 does not exist
-[2024-04-17 21:23:31] ERROR - Error while running updateIngredient with args [32, "carrot666"]: Ingredient with id 32 does not exist
-[2024-04-17 21:23:43] INFO  - Running method updateIngredient with args [32, "carrot666"]
-[2024-04-17 21:23:43] ERROR - Error while running updateIngredient with args [32, "carrot666"]: Ingredient with id 32 does not exist
-[2024-04-17 21:23:43] ERROR - Error while running updateIngredient with args [32, "carrot666"]: Ingredient with id 32 does not exist
-[2024-04-17 21:24:34] INFO  - Running method updateIngredient with args [1, gaga]
-[2024-04-17 21:24:34] ERROR - Error while running updateIngredient with args [1, gaga]: Ingredient with id 1 does not exist
-[2024-04-17 21:24:34] ERROR - Error while running updateIngredient with args [1, gaga]: Ingredient with id 1 does not exist
-[2024-04-17 21:26:22] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:26:22] INFO  - HikariPool-1 - Shutdown initiated...
-[2024-04-17 21:26:22] INFO  - HikariPool-1 - Shutdown completed.
-[2024-04-17 21:26:26] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 13952 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
-[2024-04-17 21:26:26] INFO  - No active profile set, falling back to 1 default profile: "default"
-[2024-04-17 21:26:27] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2024-04-17 21:26:27] INFO  - Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
-[2024-04-17 21:26:28] INFO  - Tomcat initialized with port 8080 (http)
-[2024-04-17 21:26:28] INFO  - Starting service [Tomcat]
-[2024-04-17 21:26:28] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
-[2024-04-17 21:26:28] INFO  - Initializing Spring embedded WebApplicationContext
-[2024-04-17 21:26:28] INFO  - Root WebApplicationContext: initialization completed in 1304 ms
-[2024-04-17 21:26:28] INFO  - HikariPool-1 - Starting...
-[2024-04-17 21:26:28] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@12192604
-[2024-04-17 21:26:28] INFO  - HikariPool-1 - Start completed.
-[2024-04-17 21:26:28] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
-[2024-04-17 21:26:28] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
-[2024-04-17 21:26:28] INFO  - HHH000026: Second-level cache disabled
-[2024-04-17 21:26:28] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
-[2024-04-17 21:26:28] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[2024-04-17 21:26:29] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2024-04-17 21:26:29] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:26:30] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
-[2024-04-17 21:26:30] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2024-04-17 21:26:31] INFO  - Tomcat started on port 8080 (http) with context path ''
-[2024-04-17 21:26:31] INFO  - Started CookbookApplication in 5.001 seconds (process running for 5.645)
-[2024-04-17 21:26:32] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2024-04-17 21:26:32] INFO  - Initializing Servlet 'dispatcherServlet'
-[2024-04-17 21:26:32] INFO  - Completed initialization in 1 ms
-[2024-04-17 21:26:32] INFO  - Running method updateIngredient with args [1, gaga]
-[2024-04-17 21:26:50] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:26:50] INFO  - HikariPool-1 - Shutdown initiated...
-[2024-04-17 21:26:50] INFO  - HikariPool-1 - Shutdown completed.
-[2024-04-17 21:26:55] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 8088 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
-[2024-04-17 21:26:55] INFO  - No active profile set, falling back to 1 default profile: "default"
-[2024-04-17 21:26:55] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2024-04-17 21:26:55] INFO  - Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
-[2024-04-17 21:26:56] INFO  - Tomcat initialized with port 8080 (http)
-[2024-04-17 21:26:56] INFO  - Starting service [Tomcat]
-[2024-04-17 21:26:56] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
-[2024-04-17 21:26:56] INFO  - Initializing Spring embedded WebApplicationContext
-[2024-04-17 21:26:56] INFO  - Root WebApplicationContext: initialization completed in 1378 ms
-[2024-04-17 21:26:56] INFO  - HikariPool-1 - Starting...
-[2024-04-17 21:26:56] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a0ab480
-[2024-04-17 21:26:56] INFO  - HikariPool-1 - Start completed.
-[2024-04-17 21:26:56] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
-[2024-04-17 21:26:56] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
-[2024-04-17 21:26:56] INFO  - HHH000026: Second-level cache disabled
-[2024-04-17 21:26:57] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
-[2024-04-17 21:26:57] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[2024-04-17 21:26:58] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2024-04-17 21:26:58] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:26:58] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
-[2024-04-17 21:26:59] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2024-04-17 21:27:00] INFO  - Tomcat started on port 8080 (http) with context path ''
-[2024-04-17 21:27:00] INFO  - Started CookbookApplication in 5.398 seconds (process running for 6.052)
-[2024-04-17 21:27:05] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2024-04-17 21:27:05] INFO  - Initializing Servlet 'dispatcherServlet'
-[2024-04-17 21:27:05] INFO  - Completed initialization in 1 ms
-[2024-04-17 21:27:05] INFO  - Running method updateIngredient with args [1, gaga]
-[2024-04-17 21:27:05] ERROR - Error while running updateIngredient with args [1, gaga]: Ingredient with id 1 does not exist
-[2024-04-17 21:27:05] ERROR - Error while running updateIngredient with args [1, gaga]: Ingredient with id 1 does not exist
-[2024-04-17 21:29:26] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:29:26] INFO  - HikariPool-1 - Shutdown initiated...
-[2024-04-17 21:29:26] INFO  - HikariPool-1 - Shutdown completed.
-[2024-04-17 21:29:31] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 7068 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
-[2024-04-17 21:29:31] INFO  - No active profile set, falling back to 1 default profile: "default"
-[2024-04-17 21:29:32] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2024-04-17 21:29:32] INFO  - Finished Spring Data repository scanning in 43 ms. Found 3 JPA repository interfaces.
-[2024-04-17 21:29:33] INFO  - Tomcat initialized with port 8080 (http)
-[2024-04-17 21:29:33] INFO  - Starting service [Tomcat]
-[2024-04-17 21:29:33] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
-[2024-04-17 21:29:33] INFO  - Initializing Spring embedded WebApplicationContext
-[2024-04-17 21:29:33] INFO  - Root WebApplicationContext: initialization completed in 1386 ms
-[2024-04-17 21:29:33] INFO  - HikariPool-1 - Starting...
-[2024-04-17 21:29:33] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@723e2d08
-[2024-04-17 21:29:33] INFO  - HikariPool-1 - Start completed.
-[2024-04-17 21:29:33] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
-[2024-04-17 21:29:33] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
-[2024-04-17 21:29:33] INFO  - HHH000026: Second-level cache disabled
-[2024-04-17 21:29:33] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
-[2024-04-17 21:29:33] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[2024-04-17 21:29:34] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2024-04-17 21:29:34] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:29:35] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
-[2024-04-17 21:29:35] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2024-04-17 21:29:36] INFO  - Tomcat started on port 8080 (http) with context path ''
-[2024-04-17 21:29:36] INFO  - Started CookbookApplication in 5.258 seconds (process running for 5.891)
-[2024-04-17 21:29:39] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2024-04-17 21:29:39] INFO  - Initializing Servlet 'dispatcherServlet'
-[2024-04-17 21:29:39] INFO  - Completed initialization in 2 ms
-[2024-04-17 21:29:39] INFO  - Running method updateIngredient with args [1, gaga]
-[2024-04-17 21:29:39] ERROR - Error while running updateIngredient with args [1, gaga]: Ingredient with id 1 does not exist
-[2024-04-17 21:29:39] ERROR - Error while running updateIngredient with args [1, gaga]: Ingredient with id 1 does not exist
-[2024-04-17 21:30:13] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:30:13] INFO  - HikariPool-1 - Shutdown initiated...
-[2024-04-17 21:30:13] INFO  - HikariPool-1 - Shutdown completed.
-[2024-04-17 21:30:17] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 16084 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
-[2024-04-17 21:30:17] INFO  - No active profile set, falling back to 1 default profile: "default"
-[2024-04-17 21:30:18] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2024-04-17 21:30:18] INFO  - Finished Spring Data repository scanning in 45 ms. Found 3 JPA repository interfaces.
-[2024-04-17 21:30:18] INFO  - Tomcat initialized with port 8080 (http)
-[2024-04-17 21:30:18] INFO  - Starting service [Tomcat]
-[2024-04-17 21:30:18] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
-[2024-04-17 21:30:18] INFO  - Initializing Spring embedded WebApplicationContext
-[2024-04-17 21:30:18] INFO  - Root WebApplicationContext: initialization completed in 1338 ms
-[2024-04-17 21:30:19] INFO  - HikariPool-1 - Starting...
-[2024-04-17 21:30:19] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6b1321b7
-[2024-04-17 21:30:19] INFO  - HikariPool-1 - Start completed.
-[2024-04-17 21:30:19] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
-[2024-04-17 21:30:19] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
-[2024-04-17 21:30:19] INFO  - HHH000026: Second-level cache disabled
-[2024-04-17 21:30:19] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
-[2024-04-17 21:30:19] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[2024-04-17 21:30:20] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2024-04-17 21:30:20] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:30:21] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
-[2024-04-17 21:30:21] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2024-04-17 21:30:22] INFO  - Tomcat started on port 8080 (http) with context path ''
-[2024-04-17 21:30:22] INFO  - Started CookbookApplication in 5.252 seconds (process running for 5.963)
-[2024-04-17 21:30:25] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2024-04-17 21:30:25] INFO  - Initializing Servlet 'dispatcherServlet'
-[2024-04-17 21:30:25] INFO  - Completed initialization in 3 ms
-[2024-04-17 21:30:25] INFO  - Running method updateIngredient with args [1, gaga]
-[2024-04-17 21:30:25] ERROR - Error while running updateIngredient with args [1, gaga]: Ingredient with id 1 does not exist
-[2024-04-17 21:30:25] ERROR - Error while running updateIngredient with args [1, gaga]: Ingredient with id 1 does not exist
-[2024-04-17 21:30:25] ERROR - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: com.cookbook.cookbook.exception.ResourceNotFoundException: Ingredient with id 1 does not exist] with root cause
-com.cookbook.cookbook.exception.ResourceNotFoundException: Ingredient with id 1 does not exist
-	at com.cookbook.cookbook.service.IngredientService.updateIngredient(IngredientService.java:77)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
-	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
-	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
-	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
-	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
-	at com.cookbook.cookbook.service.IngredientService$$SpringCGLIB$$0.updateIngredient(<generated>)
-	at com.cookbook.cookbook.controller.IngredientController.updateIngredient(IngredientController.java:41)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
-	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
-	at com.cookbook.cookbook.controller.IngredientController$$SpringCGLIB$$0.updateIngredient(<generated>)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+[2024-04-17 22:51:41] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 22:51:41] INFO  - HikariPool-1 - Shutdown initiated...
+[2024-04-17 22:51:41] INFO  - HikariPool-1 - Shutdown completed.
+[2024-04-17 22:51:44] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 9028 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
+[2024-04-17 22:51:44] INFO  - No active profile set, falling back to 1 default profile: "default"
+[2024-04-17 22:51:45] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-04-17 22:51:45] INFO  - Finished Spring Data repository scanning in 44 ms. Found 3 JPA repository interfaces.
+[2024-04-17 22:51:46] INFO  - Tomcat initialized with port 8080 (http)
+[2024-04-17 22:51:46] INFO  - Starting service [Tomcat]
+[2024-04-17 22:51:46] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
+[2024-04-17 22:51:46] INFO  - Initializing Spring embedded WebApplicationContext
+[2024-04-17 22:51:46] INFO  - Root WebApplicationContext: initialization completed in 1713 ms
+[2024-04-17 22:51:46] INFO  - HikariPool-1 - Starting...
+[2024-04-17 22:51:46] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1a914089
+[2024-04-17 22:51:46] INFO  - HikariPool-1 - Start completed.
+[2024-04-17 22:51:46] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-04-17 22:51:46] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-04-17 22:51:46] INFO  - HHH000026: Second-level cache disabled
+[2024-04-17 22:51:47] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-04-17 22:51:47] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-04-17 22:51:48] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-04-17 22:51:48] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 22:51:48] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2024-04-17 22:51:49] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-04-17 22:51:50] INFO  - Tomcat started on port 8080 (http) with context path ''
+[2024-04-17 22:51:50] INFO  - Started CookbookApplication in 6.26 seconds (process running for 7.255)
+[2024-04-17 22:51:56] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-04-17 22:51:56] INFO  - Initializing Servlet 'dispatcherServlet'
+[2024-04-17 22:51:56] INFO  - Completed initialization in 2 ms
+[2024-04-17 22:51:56] INFO  - Running method addNewCategory with args [Category{id=0, name='salad', recipes=[]}]
+[2024-04-17 22:51:56] ERROR - Error while running addNewCategory with args [Category{id=0, name='salad', recipes=[]}]: Category already exist
+[2024-04-17 22:52:10] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.cookbook.cookbook.model.Recipe` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('buter')]
+[2024-04-17 22:52:47] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 22:52:47] INFO  - HikariPool-1 - Shutdown initiated...
+[2024-04-17 22:52:47] INFO  - HikariPool-1 - Shutdown completed.
+[2024-04-17 23:11:31] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 15748 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
+[2024-04-17 23:11:31] INFO  - No active profile set, falling back to 1 default profile: "default"
+[2024-04-17 23:11:32] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-04-17 23:11:32] INFO  - Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+[2024-04-17 23:11:33] INFO  - Tomcat initialized with port 8080 (http)
+[2024-04-17 23:11:33] INFO  - Starting service [Tomcat]
+[2024-04-17 23:11:33] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
+[2024-04-17 23:11:33] INFO  - Initializing Spring embedded WebApplicationContext
+[2024-04-17 23:11:33] INFO  - Root WebApplicationContext: initialization completed in 1881 ms
+[2024-04-17 23:11:33] INFO  - HikariPool-1 - Starting...
+[2024-04-17 23:11:34] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3a4a5f3c
+[2024-04-17 23:11:34] INFO  - HikariPool-1 - Start completed.
+[2024-04-17 23:11:34] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-04-17 23:11:34] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-04-17 23:11:34] INFO  - HHH000026: Second-level cache disabled
+[2024-04-17 23:11:34] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-04-17 23:11:34] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-04-17 23:11:35] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-04-17 23:11:35] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:11:36] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2024-04-17 23:11:37] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-04-17 23:11:38] INFO  - Tomcat started on port 8080 (http) with context path ''
+[2024-04-17 23:11:38] INFO  - Started CookbookApplication in 6.653 seconds (process running for 8.26)
+[2024-04-17 23:11:39] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-04-17 23:11:39] INFO  - Initializing Servlet 'dispatcherServlet'
+[2024-04-17 23:11:39] INFO  - Completed initialization in 2 ms
+[2024-04-17 23:11:39] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:11:42] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:12:53] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:14:34] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:14:34] INFO  - HikariPool-1 - Shutdown initiated...
+[2024-04-17 23:14:34] INFO  - HikariPool-1 - Shutdown completed.
+[2024-04-17 23:14:40] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 15656 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
+[2024-04-17 23:14:40] INFO  - No active profile set, falling back to 1 default profile: "default"
+[2024-04-17 23:14:41] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-04-17 23:14:41] INFO  - Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+[2024-04-17 23:14:42] INFO  - Tomcat initialized with port 8080 (http)
+[2024-04-17 23:14:42] INFO  - Starting service [Tomcat]
+[2024-04-17 23:14:42] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
+[2024-04-17 23:14:42] INFO  - Initializing Spring embedded WebApplicationContext
+[2024-04-17 23:14:42] INFO  - Root WebApplicationContext: initialization completed in 1730 ms
+[2024-04-17 23:14:42] INFO  - HikariPool-1 - Starting...
+[2024-04-17 23:14:42] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@740b9a50
+[2024-04-17 23:14:42] INFO  - HikariPool-1 - Start completed.
+[2024-04-17 23:14:42] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-04-17 23:14:43] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-04-17 23:14:43] INFO  - HHH000026: Second-level cache disabled
+[2024-04-17 23:14:43] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-04-17 23:14:44] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-04-17 23:14:45] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-04-17 23:14:45] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:14:46] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2024-04-17 23:14:47] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-04-17 23:14:48] INFO  - Tomcat started on port 8080 (http) with context path ''
+[2024-04-17 23:14:48] INFO  - Started CookbookApplication in 8.55 seconds (process running for 9.43)
+[2024-04-17 23:14:49] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-04-17 23:14:49] INFO  - Initializing Servlet 'dispatcherServlet'
+[2024-04-17 23:14:49] INFO  - Completed initialization in 1 ms
+[2024-04-17 23:14:49] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:14:58] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:15:15] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:15:16] INFO  - HikariPool-1 - Shutdown initiated...
+[2024-04-17 23:15:16] INFO  - HikariPool-1 - Shutdown completed.
+[2024-04-17 23:15:21] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 9176 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
+[2024-04-17 23:15:21] INFO  - No active profile set, falling back to 1 default profile: "default"
+[2024-04-17 23:15:22] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-04-17 23:15:22] INFO  - Finished Spring Data repository scanning in 43 ms. Found 3 JPA repository interfaces.
+[2024-04-17 23:15:22] INFO  - Tomcat initialized with port 8080 (http)
+[2024-04-17 23:15:22] INFO  - Starting service [Tomcat]
+[2024-04-17 23:15:22] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
+[2024-04-17 23:15:23] INFO  - Initializing Spring embedded WebApplicationContext
+[2024-04-17 23:15:23] INFO  - Root WebApplicationContext: initialization completed in 1482 ms
+[2024-04-17 23:15:23] INFO  - HikariPool-1 - Starting...
+[2024-04-17 23:15:23] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2506b881
+[2024-04-17 23:15:23] INFO  - HikariPool-1 - Start completed.
+[2024-04-17 23:15:23] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-04-17 23:15:23] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-04-17 23:15:23] INFO  - HHH000026: Second-level cache disabled
+[2024-04-17 23:15:23] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-04-17 23:15:23] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-04-17 23:15:24] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-04-17 23:15:24] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:15:25] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2024-04-17 23:15:25] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-04-17 23:15:26] INFO  - Tomcat started on port 8080 (http) with context path ''
+[2024-04-17 23:15:26] INFO  - Started CookbookApplication in 5.726 seconds (process running for 6.788)
+[2024-04-17 23:15:29] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-04-17 23:15:29] INFO  - Initializing Servlet 'dispatcherServlet'
+[2024-04-17 23:15:29] INFO  - Completed initialization in 2 ms
+[2024-04-17 23:15:29] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:15:30] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:15:31] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:16:52] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:16:52] INFO  - HikariPool-1 - Shutdown initiated...
+[2024-04-17 23:16:52] INFO  - HikariPool-1 - Shutdown completed.
+[2024-04-17 23:16:56] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 1868 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
+[2024-04-17 23:16:56] INFO  - No active profile set, falling back to 1 default profile: "default"
+[2024-04-17 23:16:57] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-04-17 23:16:57] INFO  - Finished Spring Data repository scanning in 43 ms. Found 3 JPA repository interfaces.
+[2024-04-17 23:16:58] INFO  - Tomcat initialized with port 8080 (http)
+[2024-04-17 23:16:58] INFO  - Starting service [Tomcat]
+[2024-04-17 23:16:58] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
+[2024-04-17 23:16:58] INFO  - Initializing Spring embedded WebApplicationContext
+[2024-04-17 23:16:58] INFO  - Root WebApplicationContext: initialization completed in 1319 ms
+[2024-04-17 23:16:58] INFO  - HikariPool-1 - Starting...
+[2024-04-17 23:16:58] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@79df80a4
+[2024-04-17 23:16:58] INFO  - HikariPool-1 - Start completed.
+[2024-04-17 23:16:58] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-04-17 23:16:58] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-04-17 23:16:58] INFO  - HHH000026: Second-level cache disabled
+[2024-04-17 23:16:58] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-04-17 23:16:59] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-04-17 23:16:59] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-04-17 23:16:59] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:17:00] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2024-04-17 23:17:01] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-04-17 23:17:01] INFO  - Tomcat started on port 8080 (http) with context path ''
+[2024-04-17 23:17:01] INFO  - Started CookbookApplication in 5.29 seconds (process running for 5.939)
+[2024-04-17 23:17:05] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-04-17 23:17:05] INFO  - Initializing Servlet 'dispatcherServlet'
+[2024-04-17 23:17:05] INFO  - Completed initialization in 1 ms
+[2024-04-17 23:17:05] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:17:06] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:17:07] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:18:40] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:18:40] INFO  - HikariPool-1 - Shutdown initiated...
+[2024-04-17 23:18:40] INFO  - HikariPool-1 - Shutdown completed.
+[2024-04-17 23:18:45] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 11772 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
+[2024-04-17 23:18:45] INFO  - No active profile set, falling back to 1 default profile: "default"
+[2024-04-17 23:18:46] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-04-17 23:18:46] INFO  - Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+[2024-04-17 23:18:47] INFO  - Tomcat initialized with port 8080 (http)
+[2024-04-17 23:18:47] INFO  - Starting service [Tomcat]
+[2024-04-17 23:18:47] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
+[2024-04-17 23:18:47] INFO  - Initializing Spring embedded WebApplicationContext
+[2024-04-17 23:18:47] INFO  - Root WebApplicationContext: initialization completed in 1354 ms
+[2024-04-17 23:18:47] INFO  - HikariPool-1 - Starting...
+[2024-04-17 23:18:47] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6b1321b7
+[2024-04-17 23:18:47] INFO  - HikariPool-1 - Start completed.
+[2024-04-17 23:18:47] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-04-17 23:18:47] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-04-17 23:18:47] INFO  - HHH000026: Second-level cache disabled
+[2024-04-17 23:18:47] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-04-17 23:18:47] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-04-17 23:18:48] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-04-17 23:18:48] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:18:49] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2024-04-17 23:18:49] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-04-17 23:18:50] INFO  - Tomcat started on port 8080 (http) with context path ''
+[2024-04-17 23:18:50] INFO  - Started CookbookApplication in 5.589 seconds (process running for 6.535)
+[2024-04-17 23:18:51] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-04-17 23:18:51] INFO  - Initializing Servlet 'dispatcherServlet'
+[2024-04-17 23:18:51] INFO  - Completed initialization in 0 ms
+[2024-04-17 23:18:51] WARN  - Failure in @ExceptionHandler com.cookbook.cookbook.exception.ExceptionsHandler#badRequestException(BadRequestException)
+java.lang.IllegalStateException: Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.cookbook.cookbook.exception.ExceptionDetails> com.cookbook.cookbook.exception.ExceptionsHandler.badRequestException(com.cookbook.cookbook.exception.BadRequestException): No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:225)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:432)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:175)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1357)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1160)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
@@ -291,38 +237,675 @@ com.cookbook.cookbook.exception.ResourceNotFoundException: Ingredient with id 1 
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-[2024-04-17 21:30:46] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:30:46] INFO  - HikariPool-1 - Shutdown initiated...
-[2024-04-17 21:30:46] INFO  - HikariPool-1 - Shutdown completed.
-[2024-04-17 21:30:50] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 15396 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
-[2024-04-17 21:30:50] INFO  - No active profile set, falling back to 1 default profile: "default"
-[2024-04-17 21:30:51] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2024-04-17 21:30:51] INFO  - Finished Spring Data repository scanning in 43 ms. Found 3 JPA repository interfaces.
-[2024-04-17 21:30:52] INFO  - Tomcat initialized with port 8080 (http)
-[2024-04-17 21:30:52] INFO  - Starting service [Tomcat]
-[2024-04-17 21:30:52] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
-[2024-04-17 21:30:52] INFO  - Initializing Spring embedded WebApplicationContext
-[2024-04-17 21:30:52] INFO  - Root WebApplicationContext: initialization completed in 1422 ms
-[2024-04-17 21:30:52] INFO  - HikariPool-1 - Starting...
-[2024-04-17 21:30:52] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@138f0661
-[2024-04-17 21:30:52] INFO  - HikariPool-1 - Start completed.
-[2024-04-17 21:30:52] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
-[2024-04-17 21:30:52] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
-[2024-04-17 21:30:52] INFO  - HHH000026: Second-level cache disabled
-[2024-04-17 21:30:52] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
-[2024-04-17 21:30:52] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[2024-04-17 21:30:53] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2024-04-17 21:30:53] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:30:54] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
-[2024-04-17 21:30:54] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2024-04-17 21:30:55] INFO  - Tomcat started on port 8080 (http) with context path ''
-[2024-04-17 21:30:55] INFO  - Started CookbookApplication in 5.288 seconds (process running for 5.912)
-[2024-04-17 21:30:59] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2024-04-17 21:30:59] INFO  - Initializing Servlet 'dispatcherServlet'
-[2024-04-17 21:30:59] INFO  - Completed initialization in 2 ms
-[2024-04-17 21:30:59] INFO  - Running method updateIngredient with args [1, gaga]
-[2024-04-17 21:30:59] ERROR - Error while running updateIngredient with args [1, gaga]: Ingredient with id 1 does not exist
-[2024-04-17 21:30:59] ERROR - Error while running updateIngredient with args [1, gaga]: Ingredient with id 1 does not exist
-[2024-04-17 21:32:08] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
-[2024-04-17 21:32:08] INFO  - HikariPool-1 - Shutdown initiated...
-[2024-04-17 21:32:08] INFO  - HikariPool-1 - Shutdown completed.
+[2024-04-17 23:18:51] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:18:53] WARN  - Failure in @ExceptionHandler com.cookbook.cookbook.exception.ExceptionsHandler#badRequestException(BadRequestException)
+java.lang.IllegalStateException: Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.cookbook.cookbook.exception.ExceptionDetails> com.cookbook.cookbook.exception.ExceptionsHandler.badRequestException(com.cookbook.cookbook.exception.BadRequestException): No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:225)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:432)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:175)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1357)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1160)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2024-04-17 23:18:53] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:19:39] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:19:39] INFO  - HikariPool-1 - Shutdown initiated...
+[2024-04-17 23:19:39] INFO  - HikariPool-1 - Shutdown completed.
+[2024-04-17 23:19:43] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 14684 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
+[2024-04-17 23:19:43] INFO  - No active profile set, falling back to 1 default profile: "default"
+[2024-04-17 23:19:44] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-04-17 23:19:44] INFO  - Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
+[2024-04-17 23:19:45] INFO  - Tomcat initialized with port 8080 (http)
+[2024-04-17 23:19:45] INFO  - Starting service [Tomcat]
+[2024-04-17 23:19:45] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
+[2024-04-17 23:19:45] INFO  - Initializing Spring embedded WebApplicationContext
+[2024-04-17 23:19:45] INFO  - Root WebApplicationContext: initialization completed in 1397 ms
+[2024-04-17 23:19:45] INFO  - HikariPool-1 - Starting...
+[2024-04-17 23:19:45] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5111de7c
+[2024-04-17 23:19:45] INFO  - HikariPool-1 - Start completed.
+[2024-04-17 23:19:45] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-04-17 23:19:45] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-04-17 23:19:45] INFO  - HHH000026: Second-level cache disabled
+[2024-04-17 23:19:46] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-04-17 23:19:46] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-04-17 23:19:46] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-04-17 23:19:46] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:19:47] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2024-04-17 23:19:48] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-04-17 23:19:48] INFO  - Tomcat started on port 8080 (http) with context path ''
+[2024-04-17 23:19:48] INFO  - Started CookbookApplication in 5.453 seconds (process running for 6.174)
+[2024-04-17 23:19:50] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-04-17 23:19:50] INFO  - Initializing Servlet 'dispatcherServlet'
+[2024-04-17 23:19:50] INFO  - Completed initialization in 2 ms
+[2024-04-17 23:19:50] WARN  - Failure in @ExceptionHandler com.cookbook.cookbook.exception.ExceptionsHandler#badRequestException(BadRequestException)
+java.lang.IllegalStateException: Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.cookbook.cookbook.exception.ExceptionDetails> com.cookbook.cookbook.exception.ExceptionsHandler.badRequestException(com.cookbook.cookbook.exception.BadRequestException): No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:225)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:432)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:175)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1357)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1160)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2024-04-17 23:19:50] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('x' (code 120)): was expecting double-quote to start field name]
+[2024-04-17 23:20:44] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:20:44] INFO  - HikariPool-1 - Shutdown initiated...
+[2024-04-17 23:20:44] INFO  - HikariPool-1 - Shutdown completed.
+[2024-04-17 23:20:48] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 12104 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
+[2024-04-17 23:20:48] INFO  - No active profile set, falling back to 1 default profile: "default"
+[2024-04-17 23:20:49] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-04-17 23:20:49] INFO  - Finished Spring Data repository scanning in 41 ms. Found 3 JPA repository interfaces.
+[2024-04-17 23:20:50] INFO  - Tomcat initialized with port 8080 (http)
+[2024-04-17 23:20:50] INFO  - Starting service [Tomcat]
+[2024-04-17 23:20:50] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
+[2024-04-17 23:20:50] INFO  - Initializing Spring embedded WebApplicationContext
+[2024-04-17 23:20:50] INFO  - Root WebApplicationContext: initialization completed in 1312 ms
+[2024-04-17 23:20:50] INFO  - HikariPool-1 - Starting...
+[2024-04-17 23:20:50] INFO  - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@212fafd1
+[2024-04-17 23:20:50] INFO  - HikariPool-1 - Start completed.
+[2024-04-17 23:20:50] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-04-17 23:20:50] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-04-17 23:20:50] INFO  - HHH000026: Second-level cache disabled
+[2024-04-17 23:20:50] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-04-17 23:20:51] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-04-17 23:20:52] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-04-17 23:20:52] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:20:52] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2024-04-17 23:20:53] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-04-17 23:20:54] INFO  - Tomcat started on port 8080 (http) with context path ''
+[2024-04-17 23:20:54] INFO  - Started CookbookApplication in 5.805 seconds (process running for 6.487)
+[2024-04-17 23:20:56] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-04-17 23:20:56] INFO  - Initializing Servlet 'dispatcherServlet'
+[2024-04-17 23:20:56] INFO  - Completed initialization in 4 ms
+[2024-04-17 23:20:56] INFO  - Running method updateIngredient with args [1, gaga]
+[2024-04-17 23:20:56] ERROR - Error while running updateIngredient with args [1, gaga]: Ingredient with id 1 does not exist
+[2024-04-17 23:21:20] WARN  - Failure in @ExceptionHandler com.cookbook.cookbook.exception.ExceptionsHandler#badRequestException(BadRequestException)
+java.lang.IllegalStateException: Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.cookbook.cookbook.exception.ExceptionDetails> com.cookbook.cookbook.exception.ExceptionsHandler.badRequestException(com.cookbook.cookbook.exception.BadRequestException): No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:225)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:432)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:175)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1357)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1160)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2024-04-17 23:21:20] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.cookbook.cookbook.model.Recipe` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('buter')]
+[2024-04-17 23:27:19] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:27:19] INFO  - HikariPool-1 - Shutdown initiated...
+[2024-04-17 23:27:19] INFO  - HikariPool-1 - Shutdown completed.
+[2024-04-17 23:27:24] INFO  - Starting CookbookApplication using Java 21.0.2 with PID 2604 (D:\Projects\4sem\cookbook\target\classes started by daniqued in D:\Projects\4sem\cookbook)
+[2024-04-17 23:27:24] INFO  - No active profile set, falling back to 1 default profile: "default"
+[2024-04-17 23:27:25] INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2024-04-17 23:27:25] INFO  - Finished Spring Data repository scanning in 45 ms. Found 3 JPA repository interfaces.
+[2024-04-17 23:27:26] INFO  - Tomcat initialized with port 8080 (http)
+[2024-04-17 23:27:26] INFO  - Starting service [Tomcat]
+[2024-04-17 23:27:26] INFO  - Starting Servlet engine: [Apache Tomcat/10.1.19]
+[2024-04-17 23:27:26] INFO  - Initializing Spring embedded WebApplicationContext
+[2024-04-17 23:27:26] INFO  - Root WebApplicationContext: initialization completed in 1725 ms
+[2024-04-17 23:27:26] INFO  - HikariPool-1 - Starting...
+[2024-04-17 23:27:27] ERROR - HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: �����: ������������ "postgres" �� ������ �������� ����������� (�� ������)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:342)
+	at org.springframework.boot.jdbc.EmbeddedDatabaseConnection.isEmbedded(EmbeddedDatabaseConnection.java:168)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateDefaultDdlAutoProvider.getDefaultDdlAuto(HibernateDefaultDdlAutoProvider.java:42)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration.lambda$getVendorProperties$1(HibernateJpaConfiguration.java:142)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings.getDdlAuto(HibernateSettings.java:41)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties.determineDdlAuto(HibernateProperties.java:118)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties.getAdditionalProperties(HibernateProperties.java:87)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties.determineHibernateProperties(HibernateProperties.java:80)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration.getVendorProperties(HibernateJpaConfiguration.java:143)
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.entityManagerFactory(JpaBaseConfiguration.java:132)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:647)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:639)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1231)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.cookbook.cookbook.CookbookApplication.main(CookbookApplication.java:10)
+[2024-04-17 23:27:27] INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2024-04-17 23:27:27] INFO  - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-04-17 23:27:27] INFO  - HHH000026: Second-level cache disabled
+[2024-04-17 23:27:27] INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2024-04-17 23:27:27] INFO  - HikariPool-1 - Starting...
+[2024-04-17 23:27:28] ERROR - HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: �����: ������������ "postgres" �� ������ �������� ����������� (�� ������)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:428)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:388)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1231)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.cookbook.cookbook.CookbookApplication.main(CookbookApplication.java:10)
+[2024-04-17 23:27:28] WARN  - HHH000342: Could not obtain connection to query metadata
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:388)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1231)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.cookbook.cookbook.CookbookApplication.main(CookbookApplication.java:10)
+[2024-04-17 23:27:28] WARN  - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-04-17 23:27:29] INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-04-17 23:27:29] INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2024-04-17 23:27:30] INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+[2024-04-17 23:27:31] WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2024-04-17 23:27:31] INFO  - Tomcat started on port 8080 (http) with context path ''
+[2024-04-17 23:27:31] INFO  - Started CookbookApplication in 8.133 seconds (process running for 8.977)
+[2024-04-17 23:27:57] INFO  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-04-17 23:27:57] INFO  - Initializing Servlet 'dispatcherServlet'
+[2024-04-17 23:27:57] INFO  - Completed initialization in 3 ms
+[2024-04-17 23:27:57] WARN  - Failure in @ExceptionHandler com.cookbook.cookbook.exception.ExceptionsHandler#badRequestException(BadRequestException)
+java.lang.IllegalStateException: Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.cookbook.cookbook.exception.ExceptionDetails> com.cookbook.cookbook.exception.ExceptionsHandler.badRequestException(com.cookbook.cookbook.exception.BadRequestException): No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:225)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:432)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:175)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1357)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1160)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2024-04-17 23:27:58] WARN  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.cookbook.cookbook.model.Recipe` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('buter')]
+[2024-04-17 23:28:20] INFO  - HikariPool-1 - Starting...
+[2024-04-17 23:28:21] ERROR - HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: �����: ������������ "postgres" �� ������ �������� ����������� (�� ������)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:46)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getConnectionForTransactionManagement(LogicalConnectionManagedImpl.java:273)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.begin(LogicalConnectionManagedImpl.java:281)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.begin(JdbcResourceLocalTransactionCoordinatorImpl.java:232)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.begin(TransactionImpl.java:83)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.beginTransaction(HibernateJpaDialect.java:176)
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:420)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.startTransaction(AbstractPlatformTransactionManager.java:531)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:405)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:610)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.cookbook.cookbook.service.CategoryService$$SpringCGLIB$$0.addNewCategory(<generated>)
+	at com.cookbook.cookbook.controller.CategoryController.addCategory(CategoryController.java:31)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2024-04-17 23:28:21] WARN  - SQL Error: 0, SQLState: 28P01
+[2024-04-17 23:28:21] ERROR - �����: ������������ "postgres" �� ������ �������� ����������� (�� ������)
+[2024-04-17 23:28:21] WARN  - Failure in @ExceptionHandler com.cookbook.cookbook.exception.ExceptionsHandler#serverException(ServerException)
+java.lang.IllegalStateException: Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.cookbook.cookbook.exception.ExceptionDetails> com.cookbook.cookbook.exception.ExceptionsHandler.serverException(com.cookbook.cookbook.exception.ServerException): No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:225)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:432)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:175)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1357)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1160)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2024-04-17 23:28:21] ERROR - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction] with root cause
+org.postgresql.util.PSQLException: �����: ������������ "postgres" �� ������ �������� ����������� (�� ������)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:46)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:113)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:143)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getConnectionForTransactionManagement(LogicalConnectionManagedImpl.java:273)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.begin(LogicalConnectionManagedImpl.java:281)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.begin(JdbcResourceLocalTransactionCoordinatorImpl.java:232)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.begin(TransactionImpl.java:83)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.beginTransaction(HibernateJpaDialect.java:176)
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:420)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.startTransaction(AbstractPlatformTransactionManager.java:531)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:405)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:610)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.cookbook.cookbook.service.CategoryService$$SpringCGLIB$$0.addNewCategory(<generated>)
+	at com.cookbook.cookbook.controller.CategoryController.addCategory(CategoryController.java:31)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:259)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:192)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2024-04-17 23:28:37] INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'

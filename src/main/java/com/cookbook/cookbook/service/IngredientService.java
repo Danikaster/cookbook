@@ -5,6 +5,7 @@ import com.cookbook.cookbook.cache.EntityCache;
 import com.cookbook.cookbook.dto.ingredient.IngredientDTO;
 import com.cookbook.cookbook.exception.BadRequestException;
 import com.cookbook.cookbook.exception.ResourceNotFoundException;
+import com.cookbook.cookbook.exception.ServerException;
 import com.cookbook.cookbook.mapper.ingredient.IngredientDTOMapper;
 import com.cookbook.cookbook.model.Ingredient;
 import com.cookbook.cookbook.repository.IngredientRepository;
@@ -38,7 +39,7 @@ public class IngredientService {
         if (Objects.equals(ingredient.getName(), ""))
             throw new BadRequestException("Name of ingredient is empty");
         if (ingredientRepository.findByName(ingredient.getName()) != null)
-            throw new BadRequestException("Ingredient already exist");
+            throw new ServerException("Ingredient already exist");
 
         ingredientRepository.save(ingredient);
     }
