@@ -34,20 +34,13 @@ public class CategoryService {
     }
 
     public List<CategoryDTO> getCategories() {
-        try {
-            return categoryRepository.findAll().stream().map(categoryMapper).toList();
-        } catch (ServerException e) {
-            throw new ServerException("Unable to connect to the database");
-        }
+        return categoryRepository.findAll().stream().map(categoryMapper).toList();
     }
 
     public void addNewCategory(Category category) {
 
         if (Objects.equals(category.getName(), "")) {
-            throw new BadRequestException("Name of category is empty");
-        }
-        if (categoryRepository.findByName(category.getName()) != null) {
-            throw new ServerException("Category already exist");
+            throw new ServerException("Name of category is empty");
         }
 
         categoryRepository.save(category);
