@@ -1,4 +1,4 @@
-package com.cookbook.cookbook.exception;
+package com.cookbook.cookbook.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(final String message) {

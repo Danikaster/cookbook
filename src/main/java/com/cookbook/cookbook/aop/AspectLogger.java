@@ -22,7 +22,7 @@ public class AspectLogger {
         log.info(() -> String.format("Result of %s: success ", joinPoint.getSignature().getName()));
     }
 
-    @AfterThrowing(pointcut = "execution(* com.cookbook.cookbook.*.*.*(..))", throwing = "exception")
+    @AfterThrowing(pointcut = "execution(* com.cookbook.cookbook.service.*.*(..))", throwing = "exception")
     public final void logAfterError(final JoinPoint joinPoint, final Exception exception) {
         log.error(
                 () -> String.format("Error while running %s with args %s: %s", joinPoint.getSignature().getName(),

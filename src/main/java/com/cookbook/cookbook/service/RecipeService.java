@@ -2,9 +2,9 @@ package com.cookbook.cookbook.service;
 
 import com.cookbook.cookbook.cache.EntityCache;
 import com.cookbook.cookbook.dto.recipe.RecipeDTO;
-import com.cookbook.cookbook.exception.BadRequestException;
-import com.cookbook.cookbook.exception.ResourceNotFoundException;
-import com.cookbook.cookbook.exception.ServerException;
+import com.cookbook.cookbook.exceptions.BadRequestException;
+import com.cookbook.cookbook.exceptions.ResourceNotFoundException;
+import com.cookbook.cookbook.exceptions.ServerException;
 import com.cookbook.cookbook.mapper.recipe.RecipeDTOMapper;
 import com.cookbook.cookbook.model.Ingredient;
 import com.cookbook.cookbook.model.Recipe;
@@ -106,4 +106,23 @@ public class RecipeService {
             throw new ResourceNotFoundException("Recipe with id " + id + ERROR_MESSAGE);
         }
     }
+
+   /* public void addIngredientsToRecipe(Long id, List<Ingredient> ingredients) {
+        Optional<Recipe> optionalRecipe = recipeRepository.findById(id);
+        if (optionalRecipe.isEmpty()) {
+            throw new ResourceNotFoundException("Recipe with id " + id + ERROR_MESSAGE);
+        }
+        Recipe recipe = optionalRecipe.get();
+        List<Ingredient> existingIngredients = new ArrayList<>(recipe.getIngredients());
+
+        for(Ingredient ingredient : ingredients) {
+            if (ingredientRepository.getById(ingredient.getId()) != null) {
+                existingIngredients.add(ingredient);
+                List<Recipe> existingRecipes = new ArrayList<>(ingredient.getRecipes());
+                existingRecipes.add(recipe);
+                ingredientRepository.getById(ingredient.getId()).setRecipes(existingRecipes);
+            }
+        }
+        recipe.setIngredients(existingIngredients);
+    }*/
 }

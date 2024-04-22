@@ -31,6 +31,7 @@ public class RecipeController {
         recipeService.addNewRecipe(recipe);
     }
 
+
     @DeleteMapping("/delete/{name}")
     public void deleteRecipe(@PathVariable String name) {
         recipeService.deleteRecipe(name);

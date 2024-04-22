@@ -2,9 +2,8 @@ package com.cookbook.cookbook.service;
 
 import com.cookbook.cookbook.cache.EntityCache;
 import com.cookbook.cookbook.dto.category.CategoryDTO;
-import com.cookbook.cookbook.exception.BadRequestException;
-import com.cookbook.cookbook.exception.ResourceNotFoundException;
-import com.cookbook.cookbook.exception.ServerException;
+import com.cookbook.cookbook.exceptions.ResourceNotFoundException;
+import com.cookbook.cookbook.exceptions.ServerException;
 import com.cookbook.cookbook.mapper.category.CategoryDTOMapper;
 import com.cookbook.cookbook.model.Category;
 import com.cookbook.cookbook.model.Recipe;

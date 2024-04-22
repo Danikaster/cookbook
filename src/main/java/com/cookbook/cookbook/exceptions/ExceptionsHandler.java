@@ -1,12 +1,12 @@
-package com.cookbook.cookbook.exception;
+package com.cookbook.cookbook.exceptions;
 
 import java.time.format.DateTimeParseException;
 import java.util.Date;
 
+import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.ConstraintViolationException;
-import org.aspectj.lang.annotation.Aspect;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -18,9 +18,9 @@ import org.springframework.web.client.HttpClientErrorException;
 
 @ControllerAdvice
 public class ExceptionsHandler {
-    @ExceptionHandler({ServerException.class, RuntimeException.class})
+    @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<ExceptionDetails> serverException(
-            final ServerException exception) {
+            final RuntimeException exception) {
         ExceptionDetails exceptionDetails = new ExceptionDetails(
                 new Date(),
                 exception.getMessage()
@@ -49,9 +49,10 @@ public class ExceptionsHandler {
             JsonProcessingException.class,
             DateTimeParseException.class,
             IllegalArgumentException.class,
-            BadRequestException.class})
+            BadRequestException.class,
+            JsonParseException.class})
     public ResponseEntity<ExceptionDetails> badRequestException(
-            final BadRequestException exception) {
+            final Exception exception) {
         ExceptionDetails exceptionDetails = new ExceptionDetails(
                 new Date(),
                 exception.getMessage()
@@ -59,4 +60,5 @@ public class ExceptionsHandler {
         return new ResponseEntity<>(exceptionDetails,
                 HttpStatus.BAD_REQUEST);
     }
+
 }

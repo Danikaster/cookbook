@@ -3,12 +3,12 @@ package com.cookbook.cookbook.service;
 
 import com.cookbook.cookbook.cache.EntityCache;
 import com.cookbook.cookbook.dto.ingredient.IngredientDTO;
-import com.cookbook.cookbook.exception.BadRequestException;
-import com.cookbook.cookbook.exception.ResourceNotFoundException;
-import com.cookbook.cookbook.exception.ServerException;
+import com.cookbook.cookbook.exceptions.BadRequestException;
+import com.cookbook.cookbook.exceptions.ResourceNotFoundException;
 import com.cookbook.cookbook.mapper.ingredient.IngredientDTOMapper;
 import com.cookbook.cookbook.model.Ingredient;
 import com.cookbook.cookbook.repository.IngredientRepository;
+import com.cookbook.cookbook.repository.RecipeRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -23,11 +23,13 @@ public class IngredientService {
     private final IngredientDTOMapper ingredientMapper;
     private static final String ERROR_MESSAGE = " does not exist";
     private final EntityCache<String, Ingredient> ingredientCache;
+    private final RecipeRepository recipeRepository;
 
-    public IngredientService(IngredientRepository ingredientRepository, IngredientDTOMapper ingredientMapper, EntityCache<String, Ingredient> ingredientCache) {
+    public IngredientService(IngredientRepository ingredientRepository, IngredientDTOMapper ingredientMapper, EntityCache<String, Ingredient> ingredientCache, RecipeRepository recipeRepository) {
         this.ingredientRepository = ingredientRepository;
         this.ingredientMapper = ingredientMapper;
         this.ingredientCache = ingredientCache;
+        this.recipeRepository = recipeRepository;
     }
 
     public List<IngredientDTO> getIngredients() {
@@ -40,7 +42,7 @@ public class IngredientService {
             throw new BadRequestException("Name of ingredient is empty");
         }
         if (ingredientRepository.findByName(ingredient.getName()) != null) {
-            throw new ServerException("Ingredient already exist");
+            throw new BadRequestException("Ingredient already exist");
         }
 
         ingredientRepository.save(ingredient);
@@ -81,4 +83,5 @@ public class IngredientService {
             throw new ResourceNotFoundException("Ingredient with id " + id + ERROR_MESSAGE);
         }
     }
+
 }

@@ -1,4 +1,4 @@
-package com.cookbook.cookbook.exception;
+package com.cookbook.cookbook.exceptions;
 
 import java.util.Date;
 
