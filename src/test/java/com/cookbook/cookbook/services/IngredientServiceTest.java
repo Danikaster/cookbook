@@ -37,7 +37,7 @@ class IngredientServiceTest {
     }
 
     @Test
-    public void getIngredients() {
+    void getIngredients() {
         Ingredient ingredient1 = new Ingredient("potato");
         Ingredient ingredient2 = new Ingredient("cucumber");
         IngredientDTO ingredient3 = new IngredientDTO("potato");

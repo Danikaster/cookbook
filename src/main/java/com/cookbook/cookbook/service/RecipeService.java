@@ -107,22 +107,4 @@ public class RecipeService {
         }
     }
 
-   /* public void addIngredientsToRecipe(Long id, List<Ingredient> ingredients) {
-        Optional<Recipe> optionalRecipe = recipeRepository.findById(id);
-        if (optionalRecipe.isEmpty()) {
-            throw new ResourceNotFoundException("Recipe with id " + id + ERROR_MESSAGE);
-        }
-        Recipe recipe = optionalRecipe.get();
-        List<Ingredient> existingIngredients = new ArrayList<>(recipe.getIngredients());
-
-        for(Ingredient ingredient : ingredients) {
-            if (ingredientRepository.getById(ingredient.getId()) != null) {
-                existingIngredients.add(ingredient);
-                List<Recipe> existingRecipes = new ArrayList<>(ingredient.getRecipes());
-                existingRecipes.add(recipe);
-                ingredientRepository.getById(ingredient.getId()).setRecipes(existingRecipes);
-            }
-        }
-        recipe.setIngredients(existingIngredients);
-    }*/
 }
