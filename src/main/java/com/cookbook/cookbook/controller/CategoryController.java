@@ -3,6 +3,7 @@ package com.cookbook.cookbook.controller;
 import com.cookbook.cookbook.dto.category.CategoryDTO;
 import com.cookbook.cookbook.model.Category;
 import com.cookbook.cookbook.service.CategoryService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,17 +28,20 @@ public class CategoryController {
     }
 
     @PostMapping("/add")
-    public void addCategory(@RequestBody Category category) {
+    public ResponseEntity<Void> addCategory(@RequestBody Category category) {
         categoryService.addNewCategory(category);
+        return null;
     }
 
     @DeleteMapping("/delete/{name}")
-    public void deleteCategory(@PathVariable String name) {
+    public ResponseEntity<Void> deleteCategory(@PathVariable String name) {
         categoryService.deleteCategory(name);
+        return null;
     }
 
     @PutMapping("/update")
-    public void updateCategory(@RequestParam Long id, @RequestParam String name) {
+    public ResponseEntity<Void> updateCategory(@RequestParam Long id, @RequestParam String name) {
         categoryService.updateCategory(id, name);
+        return null;
     }
 }

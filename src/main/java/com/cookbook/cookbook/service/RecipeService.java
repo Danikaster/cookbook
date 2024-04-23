@@ -49,8 +49,13 @@ public class RecipeService {
         if (recipeRepository.findByName(recipe.getName()) != null) {
             throw new ServerException("Recipe already exist");
         }
-        if (categoryRepository.findByName(recipe.getCategory().getName()) == null && recipe.getCategory().getName() != null) {
-            throw new BadRequestException("There is no such category");
+        if (recipe.getCategory()!=null) {
+            if (categoryRepository.findByName(recipe.getCategory().getName()) == null) {
+                throw new BadRequestException("There is no such category");
+            }
+        }
+        if(recipe.getCategory()==null){
+            recipe.setCategory(null);
         }
         recipe.setCategory(categoryRepository.findByName(recipe.getCategory().getName()));
 

@@ -24,6 +24,9 @@ public class CategoryDTO {
         this.recipes = recipes;
     }
 
+    public CategoryDTO() {
+    }
+
     public CategoryDTO(String name) {
         this.name = name;
     }

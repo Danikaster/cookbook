@@ -32,6 +32,10 @@ public class Category {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -59,5 +63,6 @@ public class Category {
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.MERGE)
     private List<Recipe> recipes = new ArrayList<>();
+
 
 }
