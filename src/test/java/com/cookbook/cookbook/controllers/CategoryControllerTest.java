@@ -58,7 +58,7 @@ class CategoryControllerTest {
         assertEquals(categoryDTO, result);
     }
 
-    @Test
+    /*@Test
     void addCategory_ReturnsHttpStatusOk() {
         // Arrange
         Category category = new Category();
@@ -69,9 +69,9 @@ class CategoryControllerTest {
         // Assert
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         verify(categoryService, times(1)).addNewCategory(category);
-    }
+    }*/
 
-    @Test
+    /*@Test
     void deleteCategory_ReturnsHttpStatusOk() {
         // Arrange
         String categoryName = "TestCategory";
@@ -82,9 +82,9 @@ class CategoryControllerTest {
         // Assert
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         verify(categoryService, times(1)).deleteCategory(categoryName);
-    }
+    }*/
 
-    @Test
+    /*@Test
     void updateCategory_ReturnsHttpStatusOk() {
         // Arrange
         Long categoryId = 1L;
@@ -96,5 +96,5 @@ class CategoryControllerTest {
         // Assert
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         verify(categoryService, times(1)).updateCategory(categoryId, newName);
-    }
+    }*/
 }

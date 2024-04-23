@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CategoryService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">cookbook</a> &gt; <a href="index.source.html" class="el_package">com.cookbook.cookbook.service</a> &gt; <span class="el_source">CategoryService.java</span></div><h1>CategoryService.java</h1><pre class="source lang-java linenums">package com.cookbook.cookbook.service;
+
+import com.cookbook.cookbook.cache.EntityCache;
+import com.cookbook.cookbook.dto.category.CategoryDTO;
+import com.cookbook.cookbook.exceptions.ResourceNotFoundException;
+import com.cookbook.cookbook.exceptions.ServerException;
+import com.cookbook.cookbook.mapper.category.CategoryDTOMapper;
+import com.cookbook.cookbook.model.Category;
+import com.cookbook.cookbook.model.Recipe;
+import com.cookbook.cookbook.repository.CategoryRepository;
+import com.cookbook.cookbook.repository.RecipeRepository;
+import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+
+@Service
+@Transactional
+public class CategoryService {
+    private final CategoryRepository categoryRepository;
+    private final RecipeRepository recipeRepository;
+    private final CategoryDTOMapper categoryMapper;
+    private static final String ERROR_MESSAGE = &quot; does not exist&quot;;
+    private final EntityCache&lt;String, Category&gt; categoryCache;
+
+<span class="fc" id="L28">    public CategoryService(CategoryRepository categoryRepository, RecipeRepository recipeRepository, CategoryDTOMapper categoryMapper, EntityCache&lt;String, Category&gt; categoryCache) {</span>
+<span class="fc" id="L29">        this.categoryRepository = categoryRepository;</span>
+<span class="fc" id="L30">        this.recipeRepository = recipeRepository;</span>
+<span class="fc" id="L31">        this.categoryMapper = categoryMapper;</span>
+<span class="fc" id="L32">        this.categoryCache = categoryCache;</span>
+<span class="fc" id="L33">    }</span>
+
+    public List&lt;CategoryDTO&gt; getCategories() {
+<span class="fc" id="L36">        return categoryRepository.findAll().stream().map(categoryMapper).toList();</span>
+    }
+
+    public void addNewCategory(Category category) {
+
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        if (Objects.equals(category.getName(), &quot;&quot;)) {</span>
+<span class="fc" id="L42">            throw new ServerException(&quot;Name of category is empty&quot;);</span>
+        }
+
+<span class="fc" id="L45">        categoryRepository.save(category);</span>
+<span class="fc" id="L46">    }</span>
+
+    public void deleteCategory(String name) {
+<span class="fc" id="L49">        Category category = categoryRepository.findByName(name);</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (category != null) {</span>
+<span class="fc" id="L51">            List&lt;Recipe&gt; recipes = category.getRecipes();</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">            for (Recipe recipe : recipes) {</span>
+<span class="fc" id="L53">                recipe.setCategory(null);</span>
+<span class="fc" id="L54">                recipeRepository.save(recipe);</span>
+<span class="fc" id="L55">            }</span>
+
+<span class="fc" id="L57">            categoryRepository.deleteByName(name);</span>
+<span class="fc" id="L58">            categoryCache.remove(name);</span>
+<span class="fc" id="L59">        } else {</span>
+<span class="fc" id="L60">            throw new ResourceNotFoundException(&quot;Category with name &quot; + name + ERROR_MESSAGE);</span>
+        }
+<span class="fc" id="L62">    }</span>
+
+    public CategoryDTO findByName(String name) {
+<span class="fc" id="L65">        Category category = categoryCache.get(name);</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (category == null) {</span>
+<span class="fc" id="L67">            category = categoryRepository.findByName(name);</span>
+        }
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if (category != null) {</span>
+<span class="fc" id="L70">            categoryCache.put(name, category);</span>
+<span class="fc" id="L71">            return categoryMapper.apply(category);</span>
+        } else {
+<span class="fc" id="L73">            throw new ResourceNotFoundException(&quot;Category with name &quot; + name + ERROR_MESSAGE);</span>
+        }
+    }
+
+    public void updateCategory(Long id, String name) {
+<span class="fc" id="L78">        Optional&lt;Category&gt; oldCategory = categoryRepository.findById(id);</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        if (oldCategory.isPresent()) {</span>
+<span class="fc" id="L80">            Category newCategory = oldCategory.get();</span>
+<span class="fc" id="L81">            categoryCache.remove(newCategory.getName());</span>
+<span class="fc" id="L82">            newCategory.setName(name);</span>
+<span class="fc" id="L83">            categoryRepository.save(newCategory);</span>
+<span class="fc" id="L84">            categoryCache.put(name, newCategory);</span>
+<span class="fc" id="L85">        } else {</span>
+<span class="fc" id="L86">            throw new ResourceNotFoundException(&quot;Category with id &quot; + id + ERROR_MESSAGE);</span>
+        }
+<span class="fc" id="L88">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

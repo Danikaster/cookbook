@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RecipeService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">cookbook</a> &gt; <a href="index.source.html" class="el_package">com.cookbook.cookbook.service</a> &gt; <span class="el_source">RecipeService.java</span></div><h1>RecipeService.java</h1><pre class="source lang-java linenums">package com.cookbook.cookbook.service;
+
+import com.cookbook.cookbook.cache.EntityCache;
+import com.cookbook.cookbook.dto.recipe.RecipeDTO;
+import com.cookbook.cookbook.exceptions.BadRequestException;
+import com.cookbook.cookbook.exceptions.ResourceNotFoundException;
+import com.cookbook.cookbook.exceptions.ServerException;
+import com.cookbook.cookbook.mapper.recipe.RecipeDTOMapper;
+import com.cookbook.cookbook.model.Ingredient;
+import com.cookbook.cookbook.model.Recipe;
+import com.cookbook.cookbook.repository.CategoryRepository;
+import com.cookbook.cookbook.repository.IngredientRepository;
+import com.cookbook.cookbook.repository.RecipeRepository;
+import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+
+@Service
+@Transactional
+public class RecipeService {
+    private final RecipeRepository recipeRepository;
+    private final IngredientRepository ingredientRepository;
+    private final CategoryRepository categoryRepository;
+    private final RecipeDTOMapper recipeMapper;
+    private static final String ERROR_MESSAGE = &quot; does not exist&quot;;
+    private final EntityCache&lt;String, Recipe&gt; recipeCache;
+
+<span class="fc" id="L32">    public RecipeService(RecipeRepository recipeRepository, IngredientRepository ingredientRepository, CategoryRepository categoryRepository, RecipeDTOMapper recipeMapper, EntityCache&lt;String, Recipe&gt; recipeCache) {</span>
+<span class="fc" id="L33">        this.recipeRepository = recipeRepository;</span>
+<span class="fc" id="L34">        this.ingredientRepository = ingredientRepository;</span>
+<span class="fc" id="L35">        this.categoryRepository = categoryRepository;</span>
+<span class="fc" id="L36">        this.recipeMapper = recipeMapper;</span>
+<span class="fc" id="L37">        this.recipeCache = recipeCache;</span>
+<span class="fc" id="L38">    }</span>
+
+    public List&lt;RecipeDTO&gt; getRecipes() {
+<span class="fc" id="L41">        return recipeRepository.findAll().stream().map(recipeMapper).toList();</span>
+    }
+
+    public void addNewRecipe(Recipe recipe) {
+
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (Objects.equals(recipe.getName(), &quot;&quot;)) {</span>
+<span class="fc" id="L47">            throw new BadRequestException(&quot;Name of recipe is empty&quot;);</span>
+        }
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (recipeRepository.findByName(recipe.getName()) != null) {</span>
+<span class="fc" id="L50">            throw new ServerException(&quot;Recipe already exist&quot;);</span>
+        }
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (recipe.getCategory()!=null) {</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">            if (categoryRepository.findByName(recipe.getCategory().getName()) == null) {</span>
+<span class="fc" id="L54">                throw new BadRequestException(&quot;There is no such category&quot;);</span>
+            }
+        }
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        if(recipe.getCategory()==null){</span>
+<span class="fc" id="L58">            recipe.setCategory(null);</span>
+        }
+<span class="fc" id="L60">        recipe.setCategory(categoryRepository.findByName(recipe.getCategory().getName()));</span>
+
+<span class="fc" id="L62">        List&lt;Ingredient&gt; ingredients = recipe.getIngredients();</span>
+<span class="fc" id="L63">        List&lt;Ingredient&gt; allIngredients = new ArrayList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        for (Ingredient ingredient : ingredients) {</span>
+<span class="fc" id="L66">            Ingredient existingIngredient = ingredientRepository.findByName(ingredient.getName());</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">            if (existingIngredient != null) {</span>
+<span class="fc" id="L68">                allIngredients.add(existingIngredient);</span>
+            } else {
+<span class="fc" id="L70">                throw new ResourceNotFoundException(&quot;Ingredient with name &quot; + ingredient.getName() + ERROR_MESSAGE);</span>
+            }
+<span class="fc" id="L72">        }</span>
+<span class="fc" id="L73">        recipe.setIngredients(allIngredients);</span>
+
+<span class="fc" id="L75">        recipeRepository.save(recipe);</span>
+
+<span class="fc" id="L77">    }</span>
+
+    public void deleteRecipe(String name) {
+<span class="fc" id="L80">        Recipe recipe = recipeRepository.findByName(name);</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">        if (recipe != null) {</span>
+<span class="fc" id="L82">            recipeRepository.deleteByName(name);</span>
+<span class="fc" id="L83">            recipeCache.remove(name);</span>
+        } else {
+<span class="fc" id="L85">            throw new ResourceNotFoundException(&quot;Recipe with name &quot; + name + ERROR_MESSAGE);</span>
+        }
+<span class="fc" id="L87">    }</span>
+
+    public RecipeDTO findByName(String name) {
+<span class="fc" id="L90">        Recipe recipe = recipeCache.get(name);</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        if (recipe == null) {</span>
+<span class="fc" id="L92">            recipe = recipeRepository.findByName(name);</span>
+        }
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        if (recipe != null) {</span>
+<span class="fc" id="L95">            recipeCache.put(name, recipe);</span>
+<span class="fc" id="L96">            return recipeMapper.apply(recipe);</span>
+        } else {
+<span class="fc" id="L98">            throw new ResourceNotFoundException(&quot;Recipe with name &quot; + name + ERROR_MESSAGE);</span>
+        }
+    }
+
+    public void updateRecipe(Long id, String name) {
+<span class="fc" id="L103">        Optional&lt;Recipe&gt; oldRecipe = recipeRepository.findById(id);</span>
+<span class="fc bfc" id="L104" title="All 2 branches covered.">        if (oldRecipe.isPresent()) {</span>
+<span class="fc" id="L105">            Recipe newRecipe = oldRecipe.get();</span>
+<span class="fc" id="L106">            recipeCache.remove(newRecipe.getName());</span>
+<span class="fc" id="L107">            newRecipe.setName(name);</span>
+<span class="fc" id="L108">            recipeRepository.save(newRecipe);</span>
+<span class="fc" id="L109">            recipeCache.put(name, newRecipe);</span>
+<span class="fc" id="L110">        } else {</span>
+<span class="fc" id="L111">            throw new ResourceNotFoundException(&quot;Recipe with id &quot; + id + ERROR_MESSAGE);</span>
+        }
+<span class="fc" id="L113">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

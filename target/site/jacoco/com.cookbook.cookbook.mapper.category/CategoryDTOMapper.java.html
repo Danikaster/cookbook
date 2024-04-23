@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CategoryDTOMapper.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">cookbook</a> &gt; <a href="index.source.html" class="el_package">com.cookbook.cookbook.mapper.category</a> &gt; <span class="el_source">CategoryDTOMapper.java</span></div><h1>CategoryDTOMapper.java</h1><pre class="source lang-java linenums">package com.cookbook.cookbook.mapper.category;
+
+import com.cookbook.cookbook.dto.category.CategoryDTO;
+import com.cookbook.cookbook.dto.recipe.RecipeNameDTO;
+import com.cookbook.cookbook.model.Category;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.function.Function;
+
+@Component
+<span class="nc" id="L12">public class CategoryDTOMapper implements Function&lt;Category, CategoryDTO&gt; {</span>
+    @Override
+    public CategoryDTO apply(Category category) {
+<span class="nc" id="L15">        List&lt;RecipeNameDTO&gt; recipesName = category.getRecipes().stream().map(recipe -&gt; new RecipeNameDTO(recipe.getId(), recipe.getName())).toList();</span>
+<span class="nc" id="L16">        return new CategoryDTO(category.getId(), category.getName(), recipesName);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
