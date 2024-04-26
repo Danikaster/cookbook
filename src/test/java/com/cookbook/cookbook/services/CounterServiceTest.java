@@ -10,24 +10,24 @@ class CounterServiceTest {
     private CounterService counterService;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         counterService = new CounterService();
     }
 
     @Test
-    public void testIncrement() {
+    void testIncrement() {
         counterService.increment();
         counterService.increment();
         Assertions.assertEquals(2, counterService.get());
     }
 
     @Test
-    public void testGet() {
+    void testGet() {
         Assertions.assertEquals(0, counterService.get());
     }
 
     @Test
-    public void testIncrementAndGet() {
+    void testIncrementAndGet() {
         counterService.increment();
         Assertions.assertEquals(1, counterService.get());
     }

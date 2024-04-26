@@ -48,61 +48,49 @@ class CategoryServiceTest {
 
     @Test
     void getCategories_ReturnsListOfCategories() {
-        // Arrange
         Category category = new Category();
         when(categoryRepository.findAll()).thenReturn(List.of(category));
         when(categoryMapper.apply(any())).thenReturn(new CategoryDTO());
 
-        // Act
         List<CategoryDTO> categories = categoryService.getCategories();
 
-        // Assert
         assertFalse(categories.isEmpty());
     }
 
     @Test
     void addNewCategory_ThrowsServerException_WhenNameIsEmpty() {
-        // Arrange
         Category category = new Category();
         category.setName("");
 
-        // Act & Assert
         assertThrows(ServerException.class, () -> categoryService.addNewCategory(category));
     }
 
     @Test
     void addNewCategory_SavesCategoryToRepository() {
-        // Arrange
         Category category = new Category();
         category.setName("TestCategory");
 
-        // Act
         categoryService.addNewCategory(category);
 
-        // Assert
         verify(categoryRepository, times(1)).save(category);
     }
 
 
     @Test
     void deleteCategory_RemovesCategoryFromRepositoryAndCache() {
-        // Arrange
         String categoryName = "TestCategory";
         Category category = new Category();
         category.setName(categoryName);
 
-        // Mocking the recipeRepository to return some dummy recipes associated with the category
         Recipe recipe1 = new Recipe();
         Recipe recipe2 = new Recipe();
         category.setRecipes(Arrays.asList(recipe1, recipe2));
 
         when(categoryRepository.findByName(categoryName)).thenReturn(category);
 
-        // Act
         categoryService.deleteCategory(categoryName);
 
-        // Assert
-        verify(recipeRepository, times(2)).save(any(Recipe.class)); // Verify that save() is called for each associated recipe
+        verify(recipeRepository, times(2)).save(any(Recipe.class));
         verify(categoryRepository, times(1)).deleteByName(categoryName);
         verify(categoryCache, times(1)).remove(categoryName);
     }
@@ -110,44 +98,36 @@ class CategoryServiceTest {
 
     @Test
     void deleteCategory_ThrowsResourceNotFoundException_WhenCategoryNotFound() {
-        // Arrange
         String categoryName = "NonExistentCategory";
         when(categoryRepository.findByName(categoryName)).thenReturn(null);
 
-        // Act & Assert
         assertThrows(ResourceNotFoundException.class, () -> categoryService.deleteCategory(categoryName));
     }
 
     @Test
     void findByName_ReturnsCategoryDTO_WhenCategoryFoundInCache() {
-        // Arrange
         String categoryName = "TestCategory";
         Category category = new Category();
         category.setName(categoryName);
         when(categoryCache.get(categoryName)).thenReturn(category);
         when(categoryMapper.apply(category)).thenReturn(new CategoryDTO());
 
-        // Act
         CategoryDTO foundCategory = categoryService.findByName(categoryName);
 
-        // Assert
         assertNotNull(foundCategory);
     }
 
     @Test
     void findByName_ThrowsResourceNotFoundException_WhenCategoryNotFound() {
-        // Arrange
         String categoryName = "NonExistentCategory";
         when(categoryCache.get(categoryName)).thenReturn(null);
         when(categoryRepository.findByName(categoryName)).thenReturn(null);
 
-        // Act & Assert
         assertThrows(ResourceNotFoundException.class, () -> categoryService.findByName(categoryName));
     }
 
     @Test
     void updateCategory_UpdatesCategoryName_WhenCategoryExists() {
-        // Arrange
         Long categoryId = 1L;
         String newName = "NewName";
         Category oldCategory = new Category();
@@ -155,21 +135,17 @@ class CategoryServiceTest {
         oldCategory.setName("OldName");
         when(categoryRepository.findById(categoryId)).thenReturn(Optional.of(oldCategory));
 
-        // Act
         categoryService.updateCategory(categoryId, newName);
 
-        // Assert
         assertEquals(newName, oldCategory.getName());
     }
 
     @Test
     void updateCategory_ThrowsResourceNotFoundException_WhenCategoryNotFound() {
-        // Arrange
         Long nonExistentId = 999L;
         String newName = "NewName";
         when(categoryRepository.findById(nonExistentId)).thenReturn(Optional.empty());
 
-        // Act & Assert
         assertThrows(ResourceNotFoundException.class, () -> categoryService.updateCategory(nonExistentId, newName));
     }
 }
