@@ -3,7 +3,7 @@ import com.cookbook.cookbook.dto.recipe.RecipeNameDTO;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class RecipeNameDTOTest {
+class RecipeNameDTOTest {
 
     @Test
     public void testGetName() {

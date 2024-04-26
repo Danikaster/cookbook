@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
+import com.cookbook.cookbook.service.CounterService;
+
 @Aspect
 @Component
 @Log4j2
@@ -20,6 +22,8 @@ public class AspectLogger {
     @AfterReturning(pointcut = "execution(* com.cookbook.cookbook.service.*.*(..))")
     public final void logAfterServiceCommand(final JoinPoint joinPoint) {
         log.info(() -> String.format("Result of %s: success ", joinPoint.getSignature().getName()));
+        int requestCount = CounterService.get();
+        log.info("Current count of requests: {}", requestCount);
     }
 
     @AfterThrowing(pointcut = "execution(* com.cookbook.cookbook.service.*.*(..))", throwing = "exception")

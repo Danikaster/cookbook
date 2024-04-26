@@ -54,10 +54,9 @@ public class RecipeService {
                 throw new BadRequestException("There is no such category");
             }
         }
-        if(recipe.getCategory()==null){
-            recipe.setCategory(null);
+        if(recipe.getCategory()!=null){
+            recipe.setCategory(categoryRepository.findByName(recipe.getCategory().getName()));
         }
-        recipe.setCategory(categoryRepository.findByName(recipe.getCategory().getName()));
 
         List<Ingredient> ingredients = recipe.getIngredients();
         List<Ingredient> allIngredients = new ArrayList<>();

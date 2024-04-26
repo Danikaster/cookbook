@@ -2,9 +2,10 @@ package com.cookbook.cookbook.dtos.category;
 
 import com.cookbook.cookbook.dto.category.CategoryNameDTO;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-public class CategoryNameDTOTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class CategoryNameDTOTest {
 
     @Test
     public void testGettersAndSetters() {

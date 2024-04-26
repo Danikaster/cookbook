@@ -4,7 +4,7 @@ import com.cookbook.cookbook.dto.ingredient.IngredientNameDTO;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class IngredientNameDTOTest {
+class IngredientNameDTOTest {
 
     @Test
     public void testConstructorWithName() {
