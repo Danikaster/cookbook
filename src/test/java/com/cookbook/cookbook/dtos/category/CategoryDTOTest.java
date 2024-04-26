@@ -21,7 +21,7 @@ class CategoryDTOTest {
     }
 
     @Test
-    public void testConstructorWithName() {
+    void testConstructorWithName() {
         String categoryName = "Test Category";
         CategoryDTO categoryDTO = new CategoryDTO(categoryName);
         assertEquals(categoryName, categoryDTO.getName());

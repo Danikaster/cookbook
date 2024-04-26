@@ -19,7 +19,7 @@ class CategoryTest {
     }
 
     @Test
-    public void testCategoryConstructorWithIdAndNameAndRecipes() {
+    void testCategoryConstructorWithIdAndNameAndRecipes() {
         // Create a list of recipes
         List<Recipe> recipes = new ArrayList<>();
         recipes.add(new Recipe());
@@ -35,7 +35,7 @@ class CategoryTest {
     }
 
     @Test
-    public void testCategoryConstructorWithName() {
+    void testCategoryConstructorWithName() {
         // Create a category
         Category category = new Category("Test Category");
 
@@ -44,7 +44,7 @@ class CategoryTest {
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
         // Set values for the category
         category.setId(1L);
         category.setName("Test Category");
@@ -54,7 +54,7 @@ class CategoryTest {
     }
 
     @Test
-    public void testGetId() {
+    void testGetId() {
         // Set id for the category
         category.setId(1L);
 

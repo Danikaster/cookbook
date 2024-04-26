@@ -10,12 +10,12 @@ class IngredientTest {
     private Ingredient ingredient;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         ingredient = new Ingredient();
     }
 
     @Test
-    public void testIngredientConstructorWithName() {
+    void testIngredientConstructorWithName() {
         // Create an ingredient
         Ingredient ingredient = new Ingredient("Test Ingredient");
 
@@ -24,7 +24,7 @@ class IngredientTest {
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
         // Set values for the ingredient
         ingredient.setId(1L);
         ingredient.setName("Test Ingredient");

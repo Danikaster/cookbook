@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CategoryNameDTOTest {
 
     @Test
-    public void testGettersAndSetters() {
+    void testGettersAndSetters() {
         CategoryNameDTO category = new CategoryNameDTO();
         category.setId(1);
         category.setName("Test");
@@ -18,14 +18,14 @@ class CategoryNameDTOTest {
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
         CategoryNameDTO category = new CategoryNameDTO(1, "Test");
 
         assertEquals("CategoryNameDTO{id=1, name='Test'}", category.toString());
     }
 
     @Test
-    public void testConstructorWithName() {
+    void testConstructorWithName() {
         CategoryNameDTO category = new CategoryNameDTO("Test");
 
         assertEquals("Test", category.getName());
@@ -33,7 +33,7 @@ class CategoryNameDTOTest {
     }
 
     @Test
-    public void testConstructorWithIdAndName() {
+    void testConstructorWithIdAndName() {
         CategoryNameDTO category = new CategoryNameDTO(1, "Test");
 
         assertEquals(1, category.getId());

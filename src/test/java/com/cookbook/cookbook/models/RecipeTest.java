@@ -16,7 +16,7 @@ class RecipeTest {
     }
 
     @Test
-    public void testRecipeConstructorWithCategory() {
+    void testRecipeConstructorWithCategory() {
         // Create a category
         Category category = new Category("Test Category");
 
@@ -28,7 +28,7 @@ class RecipeTest {
     }
 
     @Test
-    public void testRecipeConstructorWithNameAndCategory() {
+    void testRecipeConstructorWithNameAndCategory() {
         // Create a category
         Category category = new Category("Test Category");
 
@@ -41,7 +41,7 @@ class RecipeTest {
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
         // Set values for the recipe
         recipe.setId(1L);
         recipe.setName("Test Recipe");
@@ -51,7 +51,7 @@ class RecipeTest {
     }
 
     @Test
-    public void testGetId() {
+    void testGetId() {
         // Set id for the recipe
         recipe.setId(1L);
 

@@ -7,14 +7,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class IngredientNameDTOTest {
 
     @Test
-    public void testConstructorWithName() {
+    void testConstructorWithName() {
         String name = "Test Ingredient";
         IngredientNameDTO ingredient = new IngredientNameDTO(name);
         assertEquals(name, ingredient.getName());
     }
 
     @Test
-    public void testConstructorWithIdAndName() {
+    void testConstructorWithIdAndName() {
         long id = 1;
         String name = "Test Ingredient";
         IngredientNameDTO ingredient = new IngredientNameDTO(id, name);
@@ -23,7 +23,7 @@ class IngredientNameDTOTest {
     }
 
     @Test
-    public void testSetName() {
+    void testSetName() {
         IngredientNameDTO ingredient = new IngredientNameDTO();
         String name = "Test Ingredient";
         ingredient.setName(name);
@@ -31,7 +31,7 @@ class IngredientNameDTOTest {
     }
 
     @Test
-    public void testSetId() {
+    void testSetId() {
         IngredientNameDTO ingredient = new IngredientNameDTO();
         long id = 1;
         ingredient.setId(id);
@@ -39,7 +39,7 @@ class IngredientNameDTOTest {
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
         long id = 1;
         String name = "Test Ingredient";
         IngredientNameDTO ingredient = new IngredientNameDTO(id, name);
