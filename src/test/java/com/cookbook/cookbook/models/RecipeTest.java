@@ -17,45 +17,35 @@ class RecipeTest {
 
     @Test
     void testRecipeConstructorWithCategory() {
-        // Create a category
         Category category = new Category("Test Category");
 
-        // Create a recipe with the category
         Recipe recipe = new Recipe(category);
 
-        // Verify the category
         assertEquals(category, recipe.getCategory());
     }
 
     @Test
     void testRecipeConstructorWithNameAndCategory() {
-        // Create a category
         Category category = new Category("Test Category");
 
-        // Create a recipe with a name and the category
         Recipe recipe = new Recipe("Test Recipe", category);
 
-        // Verify the name and category
         assertEquals("Test Recipe", recipe.getName());
         assertEquals(category, recipe.getCategory());
     }
 
     @Test
     void testToString() {
-        // Set values for the recipe
         recipe.setId(1L);
         recipe.setName("Test Recipe");
 
-        // Verify the toString method
         assertEquals("RecipeModel{id=1, name='Test Recipe'}", recipe.toString());
     }
 
     @Test
     void testGetId() {
-        // Set id for the recipe
         recipe.setId(1L);
 
-        // Verify the getId method
         assertEquals(1L, recipe.getId());
     }
 }

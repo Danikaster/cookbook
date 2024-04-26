@@ -16,20 +16,16 @@ class IngredientTest {
 
     @Test
     void testIngredientConstructorWithName() {
-        // Create an ingredient
         Ingredient ingredient = new Ingredient("Test Ingredient");
 
-        // Verify the value
         assertEquals("Test Ingredient", ingredient.getName());
     }
 
     @Test
     void testToString() {
-        // Set values for the ingredient
         ingredient.setId(1L);
         ingredient.setName("Test Ingredient");
 
-        // Verify the toString method
         assertEquals("IngredientModel{id=1, name='Test Ingredient'}", ingredient.toString());
     }
 }

@@ -20,15 +20,12 @@ class CategoryTest {
 
     @Test
     void testCategoryConstructorWithIdAndNameAndRecipes() {
-        // Create a list of recipes
         List<Recipe> recipes = new ArrayList<>();
         recipes.add(new Recipe());
         recipes.add(new Recipe());
 
-        // Create a category
         Category category = new Category(1L, "Test Category", recipes);
 
-        // Verify the values
         assertEquals(1L, category.getId());
         assertEquals("Test Category", category.getName());
         assertEquals(recipes, category.getRecipes());
@@ -36,29 +33,23 @@ class CategoryTest {
 
     @Test
     void testCategoryConstructorWithName() {
-        // Create a category
         Category category = new Category("Test Category");
 
-        // Verify the values
         assertEquals("Test Category", category.getName());
     }
 
     @Test
     void testToString() {
-        // Set values for the category
         category.setId(1L);
         category.setName("Test Category");
 
-        // Verify the toString method
         assertEquals("Category{id=1, name='Test Category', recipes=[]}", category.toString());
     }
 
     @Test
     void testGetId() {
-        // Set id for the category
         category.setId(1L);
 
-        // Verify the getId method
         assertEquals(1L, category.getId());
     }
 }
