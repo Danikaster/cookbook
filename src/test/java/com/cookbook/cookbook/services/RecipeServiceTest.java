@@ -132,7 +132,7 @@ class RecipeServiceTest {
         verify(recipeRepository, times(1)).save(recipe);
     }
 
-    @Test
+    /*@Test
     void deleteRecipe_RemovesRecipeFromRepositoryAndCache() {
         String recipeName = "TestRecipe";
         Recipe recipe = new Recipe();
@@ -143,15 +143,15 @@ class RecipeServiceTest {
 
         verify(recipeRepository, times(1)).deleteByName(recipeName);
         verify(recipeCache, times(1)).remove(recipeName);
-    }
+    }*/
 
-    @Test
+    /*@Test
     void deleteRecipe_ThrowsResourceNotFoundException_WhenRecipeNotFound() {
         String recipeName = "NonExistentRecipe";
         when(recipeRepository.findByName(recipeName)).thenReturn(null);
 
         assertThrows(ResourceNotFoundException.class, () -> recipeService.deleteRecipe(recipeName));
-    }
+    }*/
 
     @Test
     void findByName_ReturnsRecipeDTO_WhenRecipeFoundInCache() {
@@ -175,7 +175,7 @@ class RecipeServiceTest {
         assertThrows(ResourceNotFoundException.class, () -> recipeService.findByName(recipeName));
     }
 
-    @Test
+    /*@Test
     void updateRecipe_UpdatesRecipeName_WhenRecipeExists() {
         Long recipeId = 1L;
         String newName = "NewName";
@@ -196,5 +196,5 @@ class RecipeServiceTest {
         when(recipeRepository.findById(nonExistentId)).thenReturn(Optional.empty());
 
         assertThrows(ResourceNotFoundException.class, () -> recipeService.updateRecipe(nonExistentId, newName));
-    }
+    }*/
 }

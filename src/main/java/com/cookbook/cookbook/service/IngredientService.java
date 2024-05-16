@@ -48,13 +48,13 @@ public class IngredientService {
         ingredientRepository.save(ingredient);
     }
 
-    public void deleteIngredient(String name) {
-        Ingredient ingredient = ingredientRepository.findByName(name);
+    public void deleteIngredient(Long id) {
+        Ingredient ingredient = ingredientRepository.getById(id);
         if (ingredient != null) {
-            ingredientRepository.deleteByName(name);
-            ingredientCache.remove(name);
+            ingredientRepository.deleteById(id);
+            ingredientCache.remove(ingredient.getName());
         } else {
-            throw new ResourceNotFoundException("Ingredient with name " + name + ERROR_MESSAGE);
+            throw new ResourceNotFoundException("Ingredient with id " + id + ERROR_MESSAGE);
         }
     }
 

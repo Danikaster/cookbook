@@ -8,11 +8,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class CounterService {
     static AtomicInteger requestCounter = new AtomicInteger(0);
 
-    public void increment() {
-        requestCounter.incrementAndGet();
+    public static int increment() {
+        return requestCounter.incrementAndGet();
     }
 
     public static int get() {
         return requestCounter.get();
     }
+
 }

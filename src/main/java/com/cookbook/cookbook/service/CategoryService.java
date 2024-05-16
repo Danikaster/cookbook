@@ -2,16 +2,19 @@ package com.cookbook.cookbook.service;
 
 import com.cookbook.cookbook.cache.EntityCache;
 import com.cookbook.cookbook.dto.category.CategoryDTO;
+import com.cookbook.cookbook.exceptions.BadRequestException;
 import com.cookbook.cookbook.exceptions.ResourceNotFoundException;
 import com.cookbook.cookbook.exceptions.ServerException;
 import com.cookbook.cookbook.mapper.category.CategoryDTOMapper;
 import com.cookbook.cookbook.model.Category;
+import com.cookbook.cookbook.model.Ingredient;
 import com.cookbook.cookbook.model.Recipe;
 import com.cookbook.cookbook.repository.CategoryRepository;
 import com.cookbook.cookbook.repository.RecipeRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -42,11 +45,29 @@ public class CategoryService {
             throw new ServerException("Name of category is empty");
         }
 
+        List<Recipe> recipes = category.getRecipes();
+        List<Recipe> allRecipes = new ArrayList<>();
+
+        for (Recipe recipe : recipes) {
+            Recipe existingRecipe = recipeRepository.getById(recipe.getId());
+            if (existingRecipe != null) {
+                allRecipes.add(existingRecipe);
+            } else {
+                throw new ResourceNotFoundException("Recipe with id " + recipe.getId() + ERROR_MESSAGE);
+            }
+        }
+        category.setRecipes(allRecipes);
+
         categoryRepository.save(category);
+
+        for (Recipe recipe : allRecipes) {
+            recipe.setCategory(category);
+            recipeRepository.save(recipe);
+        }
     }
 
-    public void deleteCategory(String name) {
-        Category category = categoryRepository.findByName(name);
+    public void deleteCategory(Long id) {
+        Category category = categoryRepository.getById(id);
         if (category != null) {
             List<Recipe> recipes = category.getRecipes();
             for (Recipe recipe : recipes) {
@@ -54,10 +75,10 @@ public class CategoryService {
                 recipeRepository.save(recipe);
             }
 
-            categoryRepository.deleteByName(name);
-            categoryCache.remove(name);
+            categoryRepository.deleteById(id);
+            categoryCache.remove(category.getName());
         } else {
-            throw new ResourceNotFoundException("Category with name " + name + ERROR_MESSAGE);
+            throw new ResourceNotFoundException("Category with id " + id + ERROR_MESSAGE);
         }
     }
 

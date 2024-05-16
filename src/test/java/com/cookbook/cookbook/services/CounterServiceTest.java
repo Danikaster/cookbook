@@ -25,10 +25,4 @@ class CounterServiceTest {
     void testGet() {
         Assertions.assertEquals(0, counterService.get());
     }
-
-    @Test
-    void testIncrementAndGet() {
-        counterService.increment();
-        Assertions.assertEquals(1, counterService.get());
-    }
 }

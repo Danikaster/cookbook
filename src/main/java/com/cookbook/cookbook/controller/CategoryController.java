@@ -4,6 +4,7 @@ import com.cookbook.cookbook.dto.category.CategoryDTO;
 import com.cookbook.cookbook.model.Category;
 import com.cookbook.cookbook.service.CategoryService;
 import com.cookbook.cookbook.service.CounterService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/categories")
+@CrossOrigin(origins = "*")
 public class CategoryController {
     private final CategoryService categoryService;
     private final CounterService requestCounter;
@@ -22,33 +24,27 @@ public class CategoryController {
 
     @GetMapping()
     public List<CategoryDTO> findAllCategories() {
-        requestCounter.increment();
         return categoryService.getCategories();
     }
 
     @GetMapping("/find/{name}")
     public CategoryDTO findByName(@PathVariable String name) {
-        requestCounter.increment();
         return categoryService.findByName(name);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Void> addCategory(@RequestBody Category category) {
-        requestCounter.increment();
+    public void addNewCategory(@RequestBody Category category) {
         categoryService.addNewCategory(category);
-        return null;
     }
 
-    @DeleteMapping("/delete/{name}")
-    public ResponseEntity<Void> deleteCategory(@PathVariable String name) {
-        requestCounter.increment();
-        categoryService.deleteCategory(name);
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteCategory(@PathVariable Long id) {
+        categoryService.deleteCategory(id);
         return null;
     }
 
     @PutMapping("/update")
     public ResponseEntity<Void> updateCategory(@RequestParam Long id, @RequestParam String name) {
-        requestCounter.increment();
         categoryService.updateCategory(id, name);
         return null;
     }

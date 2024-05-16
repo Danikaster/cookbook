@@ -1,5 +1,6 @@
 package com.cookbook.cookbook.aop;
 
+import lombok.Synchronized;
 import lombok.extern.log4j.Log4j2;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -13,17 +14,20 @@ import com.cookbook.cookbook.service.CounterService;
 @Component
 @Log4j2
 public class AspectLogger {
-    @Before("execution(* com.cookbook.cookbook.service.*.*(..))")
+    @Before("execution(* com.cookbook.cookbook.service.CategoryService.*(..))"
+            + " || execution(* com.cookbook.cookbook.service.IngredientService.*(..))"
+            + " || execution(* com.cookbook.cookbook.service.RecipeService.*(..))")
     public final void logBeforeServiceCommand(final JoinPoint joinPoint) {
-        log.info(() -> String.format("Running method %s with args %s", joinPoint.getSignature().getName(),
-                Arrays.toString(joinPoint.getArgs())));
+        CounterService requestCounter = null;
+        log.info(() -> String.format("Running method %s with args %s; Current count of requests: %d", joinPoint.getSignature().getName(),
+                Arrays.toString(joinPoint.getArgs()), requestCounter.increment()));
     }
 
-    @AfterReturning(pointcut = "execution(* com.cookbook.cookbook.service.*.*(..))")
+    @AfterReturning(pointcut = "execution(* com.cookbook.cookbook.service.CategoryService.*(..))"
+            + " || execution(* com.cookbook.cookbook.service.IngredientService.*(..))"
+            + " || execution(* com.cookbook.cookbook.service.RecipeService.*(..))")
     public final void logAfterServiceCommand(final JoinPoint joinPoint) {
         log.info(() -> String.format("Result of %s: success ", joinPoint.getSignature().getName()));
-        int requestCount = CounterService.get();
-        log.info("Current count of requests: {}", requestCount);
     }
 
     @AfterThrowing(pointcut = "execution(* com.cookbook.cookbook.service.*.*(..))", throwing = "exception")

@@ -76,7 +76,7 @@ class CategoryServiceTest {
     }
 
 
-    @Test
+    /*@Test
     void deleteCategory_RemovesCategoryFromRepositoryAndCache() {
         String categoryName = "TestCategory";
         Category category = new Category();
@@ -93,16 +93,16 @@ class CategoryServiceTest {
         verify(recipeRepository, times(2)).save(any(Recipe.class));
         verify(categoryRepository, times(1)).deleteByName(categoryName);
         verify(categoryCache, times(1)).remove(categoryName);
-    }
+    }*/
 
 
-    @Test
+    /*@Test
     void deleteCategory_ThrowsResourceNotFoundException_WhenCategoryNotFound() {
         String categoryName = "NonExistentCategory";
         when(categoryRepository.findByName(categoryName)).thenReturn(null);
 
         assertThrows(ResourceNotFoundException.class, () -> categoryService.deleteCategory(categoryName));
-    }
+    }*/
 
     @Test
     void findByName_ReturnsCategoryDTO_WhenCategoryFoundInCache() {

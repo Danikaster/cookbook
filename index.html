@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление рецептами</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'ingredients')">Ингредиенты</button>
+    <button class="tablinks" onclick="openTab(event, 'recipes')">Рецепты</button>
+    <button class="tablinks" onclick="openTab(event, 'categories')">Категории</button>
+</div>
+
+<div id="ingredients" class="tabcontent hidden">
+    <h2>Добавить ингредиент</h2>
+    <input type="text" id="ingredientName" placeholder="Имя ингредиента">
+  <button class="action-btn accept" onclick="addIngredient()">Добавить</button>
+    <p id="success" class="success"></p>
+    <p id="error" class="error"></p>
+    <h2>Список ингредиентов</h2>
+    <table id="ingredientsTable">
+        <thead>
+        <tr>
+            <th onclick="sortTable('ingredientsTable', 0)">Id
+                <button class="sort-btn"></button>
+            </th>
+            <th onclick="sortTable('ingredientsTable', 1)">Название
+                <button class="sort-btn"></button>
+            </th>
+            <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<div id="recipes" class="tabcontent hidden">
+    <h2>Добавить рецепт</h2>
+    <input type="text" id="recipeName" placeholder="Название рецепта">
+    <select id="categorySelect">
+        <option value="">Выберите категорию</option>
+    </select>
+    <br>
+    <ul id="ingredientList">
+    </ul>
+    <br>
+    <button class="action-btn accept" onclick="addRecipe()">Добавить</button>
+    <p id="recipeError" class="error"></p>
+    <h2>Список рецептов</h2>
+    <table id="recipesTable">
+        <thead>
+        <tr>
+            <th onclick="sortTable('recipesTable', 0)">Id
+                <button class="sort-btn"></button>
+            </th>
+            <th onclick="sortTable('recipesTable', 1)">Название
+                <button class="sort-btn"></button>
+            </th>
+            <th onclick="sortTable('recipesTable', 2)">Категория
+                <button class="sort-btn"></button>
+            </th>
+            <th>Ингредиенты</th>
+            <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<div id="categories" class="tabcontent hidden">
+    <h2>Добавить категорию</h2>
+    <input type="text" id="categoryName" placeholder="Название категории">
+    <br>
+    <ul id="recipeList">
+    </ul>
+    <br>
+    <button class="action-btn accept" onclick="addCategory()">Добавить</button>
+    <p id="categoryError" class="error"></p>
+    <h2>Список категорий</h2>
+    <table id="categoriesTable">
+        <thead>
+        <tr>
+            <th onclick="sortTable('categoriesTable', 0)">Id
+                <button class="sort-btn"></button>
+            </th>
+            <th onclick="sortTable('categoriesTable', 1)">Название
+                <button class="sort-btn"></button>
+            </th>
+            <th>Рецепты</th>
+            <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

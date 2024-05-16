@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/recipes")
+@CrossOrigin(origins = "*")
 public class RecipeController {
     private final RecipeService recipeService;
     private final CounterService requestCounter;
@@ -21,32 +22,27 @@ public class RecipeController {
 
     @GetMapping()
     public List<RecipeDTO> findAllRecipes() {
-        requestCounter.increment();
         return recipeService.getRecipes();
     }
 
     @GetMapping("/find/{name}")
     public RecipeDTO findByName(@PathVariable String name) {
-        requestCounter.increment();
         return recipeService.findByName(name);
     }
 
     @PostMapping("/add")
     public void addRecipe(@RequestBody Recipe recipe) {
-        requestCounter.increment();
         recipeService.addNewRecipe(recipe);
     }
 
 
-    @DeleteMapping("/delete/{name}")
-    public void deleteRecipe(@PathVariable String name) {
-        requestCounter.increment();
-        recipeService.deleteRecipe(name);
+    @DeleteMapping("/delete/{id}")
+    public void deleteRecipe(@PathVariable Long id) {
+        recipeService.deleteRecipe(id);
     }
 
     @PutMapping("/update")
-    public void updateRecipe(@RequestParam Long id, @RequestParam String name) {
-        requestCounter.increment();
-        recipeService.updateRecipe(id, name);
+    public void updateRecipe(@RequestParam Long id, @RequestParam String name, @RequestParam String category) {
+        recipeService.updateRecipe(id, name, category);
     }
 }

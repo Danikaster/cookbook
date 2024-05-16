@@ -49,18 +49,18 @@ public class RecipeService {
         if (recipeRepository.findByName(recipe.getName()) != null) {
             throw new ServerException("Recipe already exist");
         }
-        if (recipe.getCategory()!=null && categoryRepository.findByName(recipe.getCategory().getName()) == null) {
+        if (recipe.getCategory()!=null && categoryRepository.getById(recipe.getCategory().getId()) == null) {
             throw new BadRequestException("There is no such category");
         }
         if(recipe.getCategory()!=null){
-            recipe.setCategory(categoryRepository.findByName(recipe.getCategory().getName()));
+            recipe.setCategory(categoryRepository.getById(recipe.getCategory().getId()));
         }
 
         List<Ingredient> ingredients = recipe.getIngredients();
         List<Ingredient> allIngredients = new ArrayList<>();
 
         for (Ingredient ingredient : ingredients) {
-            Ingredient existingIngredient = ingredientRepository.findByName(ingredient.getName());
+            Ingredient existingIngredient = ingredientRepository.getById(ingredient.getId());
             if (existingIngredient != null) {
                 allIngredients.add(existingIngredient);
             } else {
@@ -73,13 +73,13 @@ public class RecipeService {
 
     }
 
-    public void deleteRecipe(String name) {
-        Recipe recipe = recipeRepository.findByName(name);
+    public void deleteRecipe(Long id) {
+        Recipe recipe = recipeRepository.getById(id);
         if (recipe != null) {
-            recipeRepository.deleteByName(name);
-            recipeCache.remove(name);
+            recipeRepository.deleteById(id);
+            recipeCache.remove(recipe.getName());
         } else {
-            throw new ResourceNotFoundException("Recipe with name " + name + ERROR_MESSAGE);
+            throw new ResourceNotFoundException("Recipe with id " + id + ERROR_MESSAGE);
         }
     }
 
@@ -96,12 +96,16 @@ public class RecipeService {
         }
     }
 
-    public void updateRecipe(Long id, String name) {
+    public void updateRecipe(Long id, String name, String category) {
         Optional<Recipe> oldRecipe = recipeRepository.findById(id);
         if (oldRecipe.isPresent()) {
             Recipe newRecipe = oldRecipe.get();
             recipeCache.remove(newRecipe.getName());
             newRecipe.setName(name);
+            if(category != null)
+                newRecipe.setCategory(categoryRepository.findByName(category));
+            else
+                newRecipe.setCategory(null);
             recipeRepository.save(newRecipe);
             recipeCache.put(name, newRecipe);
         } else {
