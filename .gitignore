@@ -2,7 +2,9 @@ HELP.md
 cookbook.iml
 target/
 .mvn
+.env
 mvnw
+data
 mvnw.cmd
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
@@ -35,3 +37,4 @@ build/
 
 ### VS Code ###
 .vscode/
+/data/

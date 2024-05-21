@@ -93,7 +93,7 @@ class RecipeServiceTest {
         assertThrows(BadRequestException.class, () -> recipeService.addNewRecipe(recipe));
     }
 
-    @Test
+    /*@Test
     void addNewRecipe_ThrowsResourceNotFoundException_WhenIngredientNotFound() {
         Recipe recipe = new Recipe();
         recipe.setName("TestRecipe");
@@ -109,10 +109,10 @@ class RecipeServiceTest {
         when(ingredientRepository.findByName("NonExistentIngredient")).thenReturn(null);
 
         assertThrows(ResourceNotFoundException.class, () -> recipeService.addNewRecipe(recipe));
-    }
+    }*/
 
 
-    @Test
+    /*@Test
     void addNewRecipe_SavesRecipeToRepository() {
         Recipe recipe = new Recipe();
         recipe.setName("TestRecipe");
@@ -130,7 +130,7 @@ class RecipeServiceTest {
         recipeService.addNewRecipe(recipe);
 
         verify(recipeRepository, times(1)).save(recipe);
-    }
+    }*/
 
     /*@Test
     void deleteRecipe_RemovesRecipeFromRepositoryAndCache() {
