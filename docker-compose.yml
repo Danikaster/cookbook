@@ -9,9 +9,9 @@ services:
       - "8080:8080"
     env_file: ./.env
     environment:
-      DATASOURCE_URL: ${URL}
-      DATASOURCE_USERNAME: ${USER}
-      DATASOURCE_PASSWORD: ${PASSWORD}
+      DATASOURCE_URL: jdbc:postgresql://db:5432/cookbook
+      DATASOURCE_USERNAME: postgres
+      DATASOURCE_PASSWORD: root
     depends_on:
       - db
   db:
@@ -21,9 +21,9 @@ services:
       - "5432:5432"
     environment:
       - POSTGRES_DB=cookbook
-      - POSTGRES_USER=${USER}
-      - POSTGRES_PASSWORD=${PASSWORD}
-      - POSTGRES_URL=${POSTGRES_URL}
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_URL=jdbc:postgresql://localhost:5432/cookbook
     volumes:
       - postgres-data:/var/lib/postgresql/data
     env_file: ./.env
