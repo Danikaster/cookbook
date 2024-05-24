@@ -1,15 +1,9 @@
-FROM maven:3-eclipse-temurin-21-alpine AS build
+FROM openjdk:21
 
 WORKDIR /app
 
-COPY checkstyle.xml pom.xml ./
-RUN mvn clean verify --fail-never -DskipTests
-COPY src ./src
-RUN mvn package -DskipTests
+LABEL authors="daniqued"
 
-FROM eclipse-temurin:21-alpine
-WORKDIR /app
-
-COPY --from=build /app/target/cookbook-0.0.1-SNAPSHOT.jar cookbook.jar
+COPY /target/cookbook-0.0.1-SNAPSHOT.jar /app/cookbook.jar
 
 ENTRYPOINT ["java", "-jar", "cookbook.jar"]
